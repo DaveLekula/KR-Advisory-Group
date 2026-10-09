@@ -60,7 +60,7 @@ export function Footer() {
               <li>
                 <a
                   href={`mailto:${business.emails.general}`}
-                  className="text-ink hover:text-brass-deep"
+                  className="break-words text-ink hover:text-brass-deep"
                 >
                   {business.emails.general}
                 </a>

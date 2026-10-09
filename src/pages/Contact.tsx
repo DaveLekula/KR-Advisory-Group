@@ -200,14 +200,14 @@ export function Contact() {
             <WhatsAppCTA kind="consultation" variant="primary" />
             <WhatsAppCTA kind="question" variant="secondary" />
           </div>
-          <ul className="mt-6 space-y-2 text-muted-foreground">
+          <ul className="mt-6 space-y-2 break-words text-muted-foreground">
             <li>
-              <a className="text-ink underline hover:text-brass-deep" href={`mailto:${business.emails.general}`}>
+              <a className="break-words text-ink underline hover:text-brass-deep" href={`mailto:${business.emails.general}`}>
                 {business.emails.general}
               </a>
             </li>
             <li>
-              <a className="text-ink underline hover:text-brass-deep" href={`mailto:${business.emails.ralephenya}`}>
+              <a className="break-words text-ink underline hover:text-brass-deep" href={`mailto:${business.emails.ralephenya}`}>
                 {business.emails.ralephenya}
               </a>
             </li>
