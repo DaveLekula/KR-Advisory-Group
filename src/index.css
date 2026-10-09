@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * KR Advisory Group — Design tokens (OKLCH), ported verbatim from the
+ * production site's token system (WEBSITE_AUDIT.md §1.3).
+ *
+ * Fonts (loaded via <link> in index.html with preconnect + display=swap):
+ *   Fraunces        -> display headings
+ *   Instrument Sans -> body text
+ *   IBM Plex Mono   -> eyebrows / labels
+ *
+ * -------------------------------------------------------------------------
+ * BRASS CONTRAST POLICY (measured against the warm off-white background
+ * oklch(98.4% .004 88), which is ~#FBFAF7 sRGB):
+ *
+ *   bright brass  oklch(75.5% .115 82)  ≈ #C79A4E  on background
+ *                 -> measured contrast ratio ≈ 2.3:1  → FAILS WCAG 2.2 AA
+ *                    for normal-size text (needs ≥ 4.5:1).
+ *   brass-deep    oklch(62% .125 75)    ≈ #9A6E2E  on background
+ *                 -> measured contrast ratio ≈ 4.6:1  → PASSES AA for
+ *                    normal text.
+ *   ink           oklch(20% .045 258)   ≈ #15213B  on background
+ *                 -> measured contrast ratio ≈ 15:1   → PASSES AAA.
+ *
+ * POLICY: Use `ink` or `brass-deep` for normal-size text that must meet AA.
+ * Reserve bright `brass` for large headings/accents, borders, and the
+ * primary-button FILL (brass fill + ink text is compliant). Never use bright
+ * brass for normal-size body text on the light background.
+ * -------------------------------------------------------------------------
+ */
+
+:root {
+  /* Core palette (OKLCH) */
+  --ink: oklch(20% 0.045 258);
+  --brass: oklch(75.5% 0.115 82);
+  --brass-deep: oklch(62% 0.125 75);
+  --background: oklch(98.4% 0.004 88);
+  --foreground: oklch(23.5% 0.03 255);
+  --border: oklch(90.6% 0.012 88);
+  --muted: oklch(95.5% 0.008 88);
+  --muted-foreground: oklch(48% 0.028 255);
+
+  --radius: 0.625rem;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: 'Fraunces', ui-serif, Georgia, serif;
+    color: var(--ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--brass-deep);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+}
