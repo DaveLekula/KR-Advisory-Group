@@ -1,12 +1,17 @@
 import { useEffect, useRef, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { navLinks } from '@/content/business';
-import { WhatsAppCTA } from '@/components/layout/WhatsAppCTA';
+import { business, navLinks } from '@/content/business';
 import { cn } from '@/lib/cn';
 
 /**
- * Accessible mobile disclosure menu: aria-expanded on the toggle, Escape to
- * close, focus returns to the toggle on close, and large touch targets.
+ * Accessible mobile disclosure menu, styled to match the luxury sticky header.
+ *
+ * The toggle button sits on the header (transparent over the dark hero, or on
+ * the navy glass bar) so it is WHITE for legibility in both states. The open
+ * panel is a dark-navy glassmorphism surface (blur) with white text and gold
+ * accents — consistent with the desktop header and the McKinsey/Deloitte/EY
+ * reference. aria-expanded on the toggle, Escape to close, focus returns to the
+ * toggle on close, and large (44px) touch targets.
  */
 export function MobileNav() {
   const [open, setOpen] = useState(false);
@@ -27,7 +32,6 @@ export function MobileNav() {
 
   useEffect(() => {
     if (open) {
-      // Move focus into the opened panel for keyboard users.
       const firstLink = panelRef.current?.querySelector('a');
       (firstLink as HTMLElement | null)?.focus();
     }
@@ -38,7 +42,7 @@ export function MobileNav() {
       <button
         ref={toggleRef}
         type="button"
-        className="inline-flex min-h-11 min-w-11 items-center justify-center rounded border border-border px-3 text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass-deep focus-visible:ring-offset-2"
+        className="inline-flex min-h-11 min-w-11 items-center justify-center rounded border border-white/25 px-3 text-white transition-colors hover:border-brass hover:text-brass focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass focus-visible:ring-offset-2 focus-visible:ring-offset-ink"
         aria-expanded={open}
         aria-controls="mobile-nav-panel"
         onClick={() => setOpen((v) => !v)}
@@ -51,7 +55,7 @@ export function MobileNav() {
         id="mobile-nav-panel"
         ref={panelRef}
         hidden={!open}
-        className="absolute inset-x-0 top-full border-b border-border bg-background shadow-md"
+        className="mobile-nav-panel absolute inset-x-0 top-full"
       >
         <nav aria-label="Mobile" className="flex flex-col gap-1 p-4">
           {navLinks.map((link) => (
@@ -62,15 +66,22 @@ export function MobileNav() {
               onClick={() => setOpen(false)}
               className={({ isActive }) =>
                 cn(
-                  'min-h-11 rounded px-3 py-2.5 text-base text-ink hover:bg-muted',
-                  isActive && 'text-brass-deep',
+                  'min-h-11 rounded px-3 py-2.5 text-base text-white/90 transition-colors hover:bg-white/5 hover:text-brass',
+                  isActive && 'text-brass',
                 )
               }
             >
               {link.label}
             </NavLink>
           ))}
-          <WhatsAppCTA kind="consultation" className="mt-2 w-full" />
+          <a
+            href={business.whatsapp.consultationUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-hero-primary mt-2 inline-flex w-full items-center justify-center gap-2 rounded px-5 py-3 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass focus-visible:ring-offset-2 focus-visible:ring-offset-ink"
+          >
+            Book a Consultation
+          </a>
         </nav>
       </div>
     </div>

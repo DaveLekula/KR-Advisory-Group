@@ -100,6 +100,34 @@
  * ---------------------------------------------------------------------------
  */
 @layer components {
+  /*
+   * Luxury sticky-header states (see components/layout/Header.tsx).
+   * header-transparent: top of the home hero — see-through, no border/shadow.
+   * header-glass: scrolled, and interior pages — glassmorphism navy bar with
+   * blur, a hairline white border and a soft shadow. Both keep white links.
+   */
+  .header-transparent {
+    background-color: transparent;
+    border-bottom: 1px solid transparent;
+    box-shadow: none;
+  }
+  .header-glass {
+    background-color: rgba(10, 20, 40, 0.85);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.55);
+  }
+
+  /* Mobile menu panel: dark-navy glass, white text, gold accents. */
+  .mobile-nav-panel {
+    background-color: rgba(10, 20, 40, 0.95);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 16px 40px -16px rgba(0, 0, 0, 0.6);
+  }
+
   /* Deep navy base behind the image, so letterboxing/edges stay on-brand. */
   .hero-surface {
     background-color: oklch(16% 0.04 258);
