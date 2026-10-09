@@ -148,3 +148,42 @@ Full set: `hero-1920.png`, `hero-1440.png`, `hero-1024.png`, `hero-768.png`, `he
 ## Accessibility notes
 - The hero inverts the light-background contrast context: text is light-on-deep-navy, so the near-white headline and bright-brass accents have **high** contrast on the dark image+overlay. The brass-on-light policy (bright brass only for large text/fills on light surfaces) still governs the rest of the light-background page.
 - The background image is `alt=""` / `aria-hidden` (decorative); the H1 carries the meaning. Formal WCAG 2.2 AA contrast measurement over the image (worst-case pixel behind text) remains a Phase 4 task.
+
+
+---
+
+# Addendum — Luxury Sticky Header (scroll-aware navigation)
+
+**Date:** 10 October 2026
+**Problem:** After the immersive dark hero landed, the previous light/translucent header with dark links was nearly invisible over the dark hero photo. Navigation legibility regressed.
+**Goal:** Highly visible, premium navigation at every scroll position (reference: McKinsey / Deloitte Digital / EY / BCG).
+
+## Implementation
+Header is now `position: fixed`, `z-50`, scroll-aware **and** route-aware (`src/components/layout/Header.tsx`, states in `src/index.css`). `src/App.tsx` adds `pt-16` to `<main>` on non-home routes so content clears the fixed bar (home's hero is full-bleed under it by design).
+
+| State | When | Treatment |
+|-------|------|-----------|
+| **Transparent** (`.header-transparent`) | Home, scroll ≤ 50px | background transparent, no border/shadow, **white** logo wordmark + **white** links, gold CTA. The dark hero supplies contrast. |
+| **Glass** (`.header-glass`) | Home scrolled > 50px, and all interior pages immediately | `background: rgba(10,20,40,0.85)`, `backdrop-filter: blur(12px)`, border `rgba(255,255,255,0.08)`, soft shadow, **white** links, gold hover/active. |
+
+Interior pages use the glass state from the top because they have no dark hero to be transparent over — this keeps links white-on-navy (high contrast) everywhere.
+
+Transitions animate `background-color, backdrop-filter, box-shadow, border-color, color` over **250ms** (links 200ms). Links: white at rest, **gold** on hover and when active.
+
+**Mobile:** the toggle is white (hover gold) on the header in both states; the open panel (`.mobile-nav-panel`) is dark-navy glass `rgba(10,20,40,0.95)` + `blur(12px)`, white links, gold accents, full-width gold CTA — matching the desktop system.
+
+**Logo:** no white logo variant exists in the brand assets, so the existing `kr-logo.png` monogram is rendered white via `brightness-0 invert` (not a fabricated new logo), paired with the white "KR Advisory Group" wordmark.
+
+## Verification (measured + visual in Microsoft Edge)
+- **Home @ top:** `headerBg: rgba(0,0,0,0)`, no blur/shadow, `linkColor: rgba(255,255,255,0.9)` ✓
+- **Home scrolled:** `rgba(10,20,40,0.85)` + `blur(12px)` + soft shadow, white links ✓
+- **Services @ top (interior):** navy glass immediately, white links ✓
+- **Mobile panel:** `rgba(10,20,40,0.95)` + `blur(12px)`, white links ✓
+- Full regression: 30/30 route×viewport combos — **0 overflow, 0 structural issues**; mobile nav opens with all links + CTA.
+- **Contrast:** white (`rgba(255,255,255,0.9)`) links on navy `rgba(10,20,40,0.85)` far exceed WCAG 2.2 AA (≈ 15:1); gold hover/active on navy also passes. Over the hero photo the text sits on the dark navy gradient overlay and reads clearly. (Worst-case per-pixel photo contrast remains a Phase 4 measurement.)
+
+## Screenshots
+![Header — home top (transparent)](./qa-screenshots/header-home-top.png)
+![Header — home scrolled (glass)](./qa-screenshots/header-home-scrolled.png)
+![Header — interior page (glass)](./qa-screenshots/header-services-top.png)
+![Header — mobile menu (navy glass)](./qa-screenshots/header-mobile-menu.png)
