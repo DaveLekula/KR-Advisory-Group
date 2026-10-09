@@ -1,0 +1,581 @@
+[
+  {
+    "route": "home",
+    "viewport": "360x800",
+    "docW": 360,
+    "clientW": 360,
+    "horizontalOverflow": false,
+    "logoOk": true,
+    "h1Count": 1,
+    "h1s": [
+      "Financial clarity. Stronger controls. Better business decisions."
+    ],
+    "header": true,
+    "footer": true,
+    "nav": true,
+    "mobileTogglePresent": true,
+    "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
+    "h1Font": "Fraunces, ui-serif, Georgia, serif",
+    "waCtas": 6
+  },
+  {
+    "route": "services",
+    "viewport": "360x800",
+    "docW": 360,
+    "clientW": 360,
+    "horizontalOverflow": false,
+    "logoOk": true,
+    "h1Count": 1,
+    "h1s": [
+      "Our Services"
+    ],
+    "header": true,
+    "footer": true,
+    "nav": true,
+    "mobileTogglePresent": true,
+    "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
+    "h1Font": "Fraunces, ui-serif, Georgia, serif",
+    "waCtas": 17
+  },
+  {
+    "route": "about",
+    "viewport": "360x800",
+    "docW": 360,
+    "clientW": 360,
+    "horizontalOverflow": false,
+    "logoOk": true,
+    "h1Count": 1,
+    "h1s": [
+      "About Us"
+    ],
+    "header": true,
+    "footer": true,
+    "nav": true,
+    "mobileTogglePresent": true,
+    "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
+    "h1Font": "Fraunces, ui-serif, Georgia, serif",
+    "waCtas": 3
+  },
+  {
+    "route": "contact",
+    "viewport": "360x800",
+    "docW": 360,
+    "clientW": 360,
+    "horizontalOverflow": false,
+    "logoOk": true,
+    "h1Count": 1,
+    "h1s": [
+      "Contact Us"
+    ],
+    "header": true,
+    "footer": true,
+    "nav": true,
+    "mobileTogglePresent": true,
+    "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
+    "h1Font": "Fraunces, ui-serif, Georgia, serif",
+    "waCtas": 5
+  },
+  {
+    "route": "referral",
+    "viewport": "360x800",
+    "docW": 360,
+    "clientW": 360,
+    "horizontalOverflow": false,
+    "logoOk": true,
+    "h1Count": 1,
+    "h1s": [
+      "Referral Programme"
+    ],
+    "header": true,
+    "footer": true,
+    "nav": true,
+    "mobileTogglePresent": true,
+    "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
+    "h1Font": "Fraunces, ui-serif, Georgia, serif",
+    "waCtas": 3
+  },
+  {
+    "route": "home",
+    "viewport": "390x844",
+    "docW": 390,
+    "clientW": 390,
+    "horizontalOverflow": false,
+    "logoOk": true,
+    "h1Count": 1,
+    "h1s": [
+      "Financial clarity. Stronger controls. Better business decisions."
+    ],
+    "header": true,
+    "footer": true,
+    "nav": true,
+    "mobileTogglePresent": true,
+    "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
+    "h1Font": "Fraunces, ui-serif, Georgia, serif",
+    "waCtas": 6
+  },
+  {
+    "route": "services",
+    "viewport": "390x844",
+    "docW": 390,
+    "clientW": 390,
+    "horizontalOverflow": false,
+    "logoOk": true,
+    "h1Count": 1,
+    "h1s": [
+      "Our Services"
+    ],
+    "header": true,
+    "footer": true,
+    "nav": true,
+    "mobileTogglePresent": true,
+    "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
+    "h1Font": "Fraunces, ui-serif, Georgia, serif",
+    "waCtas": 17
+  },
+  {
+    "route": "about",
+    "viewport": "390x844",
+    "docW": 390,
+    "clientW": 390,
+    "horizontalOverflow": false,
+    "logoOk": true,
+    "h1Count": 1,
+    "h1s": [
+      "About Us"
+    ],
+    "header": true,
+    "footer": true,
+    "nav": true,
+    "mobileTogglePresent": true,
+    "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
+    "h1Font": "Fraunces, ui-serif, Georgia, serif",
+    "waCtas": 3
+  },
+  {
+    "route": "contact",
+    "viewport": "390x844",
+    "docW": 390,
+    "clientW": 390,
+    "horizontalOverflow": false,
+    "logoOk": true,
+    "h1Count": 1,
+    "h1s": [
+      "Contact Us"
+    ],
+    "header": true,
+    "footer": true,
+    "nav": true,
+    "mobileTogglePresent": true,
+    "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
+    "h1Font": "Fraunces, ui-serif, Georgia, serif",
+    "waCtas": 5
+  },
+  {
+    "route": "referral",
+    "viewport": "390x844",
+    "docW": 390,
+    "clientW": 390,
+    "horizontalOverflow": false,
+    "logoOk": true,
+    "h1Count": 1,
+    "h1s": [
+      "Referral Programme"
+    ],
+    "header": true,
+    "footer": true,
+    "nav": true,
+    "mobileTogglePresent": true,
+    "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
+    "h1Font": "Fraunces, ui-serif, Georgia, serif",
+    "waCtas": 3
+  },
+  {
+    "route": "home",
+    "viewport": "768x1024",
+    "docW": 768,
+    "clientW": 768,
+    "horizontalOverflow": false,
+    "logoOk": true,
+    "h1Count": 1,
+    "h1s": [
+      "Financial clarity. Stronger controls. Better business decisions."
+    ],
+    "header": true,
+    "footer": true,
+    "nav": true,
+    "mobileTogglePresent": true,
+    "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
+    "h1Font": "Fraunces, ui-serif, Georgia, serif",
+    "waCtas": 6
+  },
+  {
+    "route": "services",
+    "viewport": "768x1024",
+    "docW": 768,
+    "clientW": 768,
+    "horizontalOverflow": false,
+    "logoOk": true,
+    "h1Count": 1,
+    "h1s": [
+      "Our Services"
+    ],
+    "header": true,
+    "footer": true,
+    "nav": true,
+    "mobileTogglePresent": true,
+    "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
+    "h1Font": "Fraunces, ui-serif, Georgia, serif",
+    "waCtas": 17
+  },
+  {
+    "route": "about",
+    "viewport": "768x1024",
+    "docW": 768,
+    "clientW": 768,
+    "horizontalOverflow": false,
+    "logoOk": true,
+    "h1Count": 1,
+    "h1s": [
+      "About Us"
+    ],
+    "header": true,
+    "footer": true,
+    "nav": true,
+    "mobileTogglePresent": true,
+    "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
+    "h1Font": "Fraunces, ui-serif, Georgia, serif",
+    "waCtas": 3
+  },
+  {
+    "route": "contact",
+    "viewport": "768x1024",
+    "docW": 768,
+    "clientW": 768,
+    "horizontalOverflow": false,
+    "logoOk": true,
+    "h1Count": 1,
+    "h1s": [
+      "Contact Us"
+    ],
+    "header": true,
+    "footer": true,
+    "nav": true,
+    "mobileTogglePresent": true,
+    "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
+    "h1Font": "Fraunces, ui-serif, Georgia, serif",
+    "waCtas": 5
+  },
+  {
+    "route": "referral",
+    "viewport": "768x1024",
+    "docW": 768,
+    "clientW": 768,
+    "horizontalOverflow": false,
+    "logoOk": true,
+    "h1Count": 1,
+    "h1s": [
+      "Referral Programme"
+    ],
+    "header": true,
+    "footer": true,
+    "nav": true,
+    "mobileTogglePresent": true,
+    "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
+    "h1Font": "Fraunces, ui-serif, Georgia, serif",
+    "waCtas": 3
+  },
+  {
+    "route": "home",
+    "viewport": "1024x768",
+    "docW": 1024,
+    "clientW": 1024,
+    "horizontalOverflow": false,
+    "logoOk": true,
+    "h1Count": 1,
+    "h1s": [
+      "Financial clarity. Stronger controls. Better business decisions."
+    ],
+    "header": true,
+    "footer": true,
+    "nav": true,
+    "mobileTogglePresent": true,
+    "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
+    "h1Font": "Fraunces, ui-serif, Georgia, serif",
+    "waCtas": 6
+  },
+  {
+    "route": "services",
+    "viewport": "1024x768",
+    "docW": 1024,
+    "clientW": 1024,
+    "horizontalOverflow": false,
+    "logoOk": true,
+    "h1Count": 1,
+    "h1s": [
+      "Our Services"
+    ],
+    "header": true,
+    "footer": true,
+    "nav": true,
+    "mobileTogglePresent": true,
+    "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
+    "h1Font": "Fraunces, ui-serif, Georgia, serif",
+    "waCtas": 17
+  },
+  {
+    "route": "about",
+    "viewport": "1024x768",
+    "docW": 1024,
+    "clientW": 1024,
+    "horizontalOverflow": false,
+    "logoOk": true,
+    "h1Count": 1,
+    "h1s": [
+      "About Us"
+    ],
+    "header": true,
+    "footer": true,
+    "nav": true,
+    "mobileTogglePresent": true,
+    "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
+    "h1Font": "Fraunces, ui-serif, Georgia, serif",
+    "waCtas": 3
+  },
+  {
+    "route": "contact",
+    "viewport": "1024x768",
+    "docW": 1024,
+    "clientW": 1024,
+    "horizontalOverflow": false,
+    "logoOk": true,
+    "h1Count": 1,
+    "h1s": [
+      "Contact Us"
+    ],
+    "header": true,
+    "footer": true,
+    "nav": true,
+    "mobileTogglePresent": true,
+    "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
+    "h1Font": "Fraunces, ui-serif, Georgia, serif",
+    "waCtas": 5
+  },
+  {
+    "route": "referral",
+    "viewport": "1024x768",
+    "docW": 1024,
+    "clientW": 1024,
+    "horizontalOverflow": false,
+    "logoOk": true,
+    "h1Count": 1,
+    "h1s": [
+      "Referral Programme"
+    ],
+    "header": true,
+    "footer": true,
+    "nav": true,
+    "mobileTogglePresent": true,
+    "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
+    "h1Font": "Fraunces, ui-serif, Georgia, serif",
+    "waCtas": 3
+  },
+  {
+    "route": "home",
+    "viewport": "1440x900",
+    "docW": 1440,
+    "clientW": 1440,
+    "horizontalOverflow": false,
+    "logoOk": true,
+    "h1Count": 1,
+    "h1s": [
+      "Financial clarity. Stronger controls. Better business decisions."
+    ],
+    "header": true,
+    "footer": true,
+    "nav": true,
+    "mobileTogglePresent": true,
+    "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
+    "h1Font": "Fraunces, ui-serif, Georgia, serif",
+    "waCtas": 6
+  },
+  {
+    "route": "services",
+    "viewport": "1440x900",
+    "docW": 1440,
+    "clientW": 1440,
+    "horizontalOverflow": false,
+    "logoOk": true,
+    "h1Count": 1,
+    "h1s": [
+      "Our Services"
+    ],
+    "header": true,
+    "footer": true,
+    "nav": true,
+    "mobileTogglePresent": true,
+    "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
+    "h1Font": "Fraunces, ui-serif, Georgia, serif",
+    "waCtas": 17
+  },
+  {
+    "route": "about",
+    "viewport": "1440x900",
+    "docW": 1440,
+    "clientW": 1440,
+    "horizontalOverflow": false,
+    "logoOk": true,
+    "h1Count": 1,
+    "h1s": [
+      "About Us"
+    ],
+    "header": true,
+    "footer": true,
+    "nav": true,
+    "mobileTogglePresent": true,
+    "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
+    "h1Font": "Fraunces, ui-serif, Georgia, serif",
+    "waCtas": 3
+  },
+  {
+    "route": "contact",
+    "viewport": "1440x900",
+    "docW": 1440,
+    "clientW": 1440,
+    "horizontalOverflow": false,
+    "logoOk": true,
+    "h1Count": 1,
+    "h1s": [
+      "Contact Us"
+    ],
+    "header": true,
+    "footer": true,
+    "nav": true,
+    "mobileTogglePresent": true,
+    "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
+    "h1Font": "Fraunces, ui-serif, Georgia, serif",
+    "waCtas": 5
+  },
+  {
+    "route": "referral",
+    "viewport": "1440x900",
+    "docW": 1440,
+    "clientW": 1440,
+    "horizontalOverflow": false,
+    "logoOk": true,
+    "h1Count": 1,
+    "h1s": [
+      "Referral Programme"
+    ],
+    "header": true,
+    "footer": true,
+    "nav": true,
+    "mobileTogglePresent": true,
+    "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
+    "h1Font": "Fraunces, ui-serif, Georgia, serif",
+    "waCtas": 3
+  },
+  {
+    "route": "home",
+    "viewport": "1920x1080",
+    "docW": 1920,
+    "clientW": 1920,
+    "horizontalOverflow": false,
+    "logoOk": true,
+    "h1Count": 1,
+    "h1s": [
+      "Financial clarity. Stronger controls. Better business decisions."
+    ],
+    "header": true,
+    "footer": true,
+    "nav": true,
+    "mobileTogglePresent": true,
+    "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
+    "h1Font": "Fraunces, ui-serif, Georgia, serif",
+    "waCtas": 6
+  },
+  {
+    "route": "services",
+    "viewport": "1920x1080",
+    "docW": 1920,
+    "clientW": 1920,
+    "horizontalOverflow": false,
+    "logoOk": true,
+    "h1Count": 1,
+    "h1s": [
+      "Our Services"
+    ],
+    "header": true,
+    "footer": true,
+    "nav": true,
+    "mobileTogglePresent": true,
+    "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
+    "h1Font": "Fraunces, ui-serif, Georgia, serif",
+    "waCtas": 17
+  },
+  {
+    "route": "about",
+    "viewport": "1920x1080",
+    "docW": 1920,
+    "clientW": 1920,
+    "horizontalOverflow": false,
+    "logoOk": true,
+    "h1Count": 1,
+    "h1s": [
+      "About Us"
+    ],
+    "header": true,
+    "footer": true,
+    "nav": true,
+    "mobileTogglePresent": true,
+    "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
+    "h1Font": "Fraunces, ui-serif, Georgia, serif",
+    "waCtas": 3
+  },
+  {
+    "route": "contact",
+    "viewport": "1920x1080",
+    "docW": 1920,
+    "clientW": 1920,
+    "horizontalOverflow": false,
+    "logoOk": true,
+    "h1Count": 1,
+    "h1s": [
+      "Contact Us"
+    ],
+    "header": true,
+    "footer": true,
+    "nav": true,
+    "mobileTogglePresent": true,
+    "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
+    "h1Font": "Fraunces, ui-serif, Georgia, serif",
+    "waCtas": 5
+  },
+  {
+    "route": "referral",
+    "viewport": "1920x1080",
+    "docW": 1920,
+    "clientW": 1920,
+    "horizontalOverflow": false,
+    "logoOk": true,
+    "h1Count": 1,
+    "h1s": [
+      "Referral Programme"
+    ],
+    "header": true,
+    "footer": true,
+    "nav": true,
+    "mobileTogglePresent": true,
+    "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
+    "h1Font": "Fraunces, ui-serif, Georgia, serif",
+    "waCtas": 3
+  },
+  {
+    "route": "home",
+    "viewport": "360x800",
+    "mobileNav": {
+      "toggleFound": true,
+      "opened": true,
+      "linksVisible": 36
+    }
+  }
+]
