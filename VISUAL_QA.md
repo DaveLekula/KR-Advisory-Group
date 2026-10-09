@@ -110,3 +110,41 @@ Full set:
 - **Tooling added for QA** (dev-only, not shipped to users): `playwright-core`, `sirv-cli`, and scripts under `src/scripts/` (`visual-qa.mjs` plus debug helpers). These can be kept for regression runs or removed; they do not affect the production bundle.
 
 **Conclusion:** Phase 2.5 visual QA is complete. The critical hydration defect and all overflow issues are fixed and re-verified in a real browser. The build is visually sound across the full device range and ready to proceed to Phase 3 on your approval.
+
+
+---
+
+# Addendum — Homepage Hero Elevation (award-quality pass)
+
+**Date:** 10 October 2026
+**Objective:** Preserve the production homepage's visual impact and design language (navy + brass, Fraunces display, CA(SA)-led advisory firm) while elevating the hero to agency-award quality — the register of Deloitte / McKinsey / BCG / PwC / EY, explicitly **not** a SaaS landing page. Design language was *improved*, not replaced.
+
+## What changed
+- **New immersive hero** (`src/components/layout/Hero.tsx`), replacing the previous two-column image-card hero.
+- The verified city/building image (`/hero.jpg`) is now a **full-width immersive background** on a full-viewport section (`min-h-[100svh]`), with the headline vertically centred.
+- **Layered depth overlays** (`src/index.css`, `@layer components`):
+  - navy gradient (bottom/left darkening for legibility) + a faint brass radial glow top-right;
+  - a **refined architectural grid** of fine brass lines, radial-masked to fade outward (reads as depth, not a generic grid);
+  - an inset vignette for edge depth;
+  - **glass accents** (`backdrop-filter`) on the credential chips and the secondary CTA.
+- **Typography:** dramatically larger Fraunces headline via `clamp(2.6rem, 7vw, 5.75rem)` (≈92px at desktop, 41.6px at mobile), light weight, tight tracking/leading, deliberate 3-line break. The final clause ("Better business decisions.") is accented in brass. **The headline text is verbatim** — only the wrap points are controlled.
+- **CTA group** directly beneath the value proposition with clear hierarchy: primary = solid brass with hover lift + shadow; secondary = glass ghost (`Book a Consultation`, verified WhatsApp consultation URL).
+- **Motion:** staggered entrance rise/fade + a very slow brass-glow drift, both fully disabled under `prefers-reduced-motion`.
+- **Glass credential chips** use verified facts only (CA(SA)-led practice · Midrand · Johannesburg · Business & public sector).
+
+## Verification (rendered in Microsoft Edge)
+- Full-viewport hero at every breakpoint: heights 1080 / 900 / 832 / 1024 / 909 / 955 px at 1920 / 1440 / 1024 / 768 / 390 / 360.
+- Responsive headline confirmed (92px → 41.6px).
+- **Zero horizontal overflow** on all 5 pages × 6 viewports; Home retains exactly one H1, header/footer/logo present; no console errors or failed requests.
+- Verbatim content preserved; no fabrication; the `[CLIENT TO SUPPLY]` placeholders elsewhere on the page are unchanged.
+- CTA hierarchy verified: primary brass fill vs. secondary glass ghost are visually distinct (fixed a first-pass issue where the themed Button's brass-fill utilities overrode the ghost treatment — the secondary CTA is now a direct anchor).
+
+## Screenshots (hero, viewport-framed)
+![Hero 1920](./qa-screenshots/hero-1920.png)
+![Hero 390 mobile](./qa-screenshots/hero-390.png)
+
+Full set: `hero-1920.png`, `hero-1440.png`, `hero-1024.png`, `hero-768.png`, `hero-390.png`, `hero-360.png`, plus the updated full-page `home-*.png`.
+
+## Accessibility notes
+- The hero inverts the light-background contrast context: text is light-on-deep-navy, so the near-white headline and bright-brass accents have **high** contrast on the dark image+overlay. The brass-on-light policy (bright brass only for large text/fills on light surfaces) still governs the rest of the light-background page.
+- The background image is `alt=""` / `aria-hidden` (decorative); the H1 carries the meaning. Formal WCAG 2.2 AA contrast measurement over the image (worst-case pixel behind text) remains a Phase 4 task.
