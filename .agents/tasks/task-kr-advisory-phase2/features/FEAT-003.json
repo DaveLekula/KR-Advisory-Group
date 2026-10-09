@@ -1,0 +1,28 @@
+{
+  "id": "FEAT-003",
+  "type": "feat",
+  "description": "Recreate the About (/about), Contact (/contact), and Referral (/referral) pages with verbatim copy from CONTENT_INVENTORY.md, using the FEAT-001 component library. All [NOT VERIFIED] items (leadership bios/photos, contact form endpoint/fields, referral reward terms) are clearly-labeled placeholders, never fabricated. Depends on FEAT-001.",
+  "status": "completed",
+  "steps": [
+    "Read context.json and CONTENT_INVENTORY.md sections 'Page: About', 'Page: Contact', 'Page: Referral Programme' FIRST. Add verbatim copy to src/content/pages.ts and per-route meta to src/content/seo.ts.",
+    "Implement src/pages/About.tsx: single H1 'About Us', intro + body, sections Leadership (names/titles ONLY: Kgaogelo Ralephenya, CA(SA) - Co-Founder & Managing Director; Naledi Gongxeka, CA(SA) - Co-Founder), How We Work, and Who We Help (reuse AudienceCards). Render bios/photos as clearly-labeled placeholders (e.g. 'Bio to be supplied by client') - do NOT fabricate.",
+    "Implement src/pages/Contact.tsx: single H1 'Contact Us', intro, the 'Prepare your enquiry' helper (free-text situation + optional Service selector, copy 'Nothing is sent to us until you submit the form below.'), and an accessible contact form using FormField (labelled fields, aria-invalid/aria-describedby errors, no success state on failure). Mark the submit endpoint and exact field set as a clearly-commented placeholder ([NOT VERIFIED]); do NOT invent an endpoint. Include WhatsApp 073 499 7148 prefilled CTAs and the verified emails.",
+    "Implement src/pages/Referral.tsx: single H1 'Referral Programme', body copy, and 'Ready to make a referral?' CTA block with a 'Refer a Business' button. Render reward structure/terms as a clearly-labeled placeholder ([NOT VERIFIED]); do NOT invent terms.",
+    "Register all three pages in src/routes.tsx.",
+    "Commit locally (do NOT push): 'feat: add About, Contact, and Referral pages'. Set FEAT-003 status to completed and record notes in findings."
+  ],
+  "acceptance_criteria": [
+    "dist/about/index.html contains 'About Us' and both verified leadership names with titles, and no fabricated bio text.",
+    "dist/contact/index.html contains 'Contact Us', the 'Prepare your enquiry' copy, and a labelled form; the form endpoint is a clearly-labeled placeholder.",
+    "dist/referral/index.html contains 'Referral Programme' and a labeled placeholder for reward terms (no invented amounts/terms).",
+    "npm run build succeeds with no type errors."
+  ],
+  "verification": [
+    "Run: npm run build  (succeeds)",
+    "Confirm dist/about/index.html contains 'About Us' and 'Kgaogelo Ralephenya' and 'Naledi Gongxeka'",
+    "Confirm dist/contact/index.html contains 'Contact Us'",
+    "Confirm dist/referral/index.html contains 'Referral Programme'"
+  ],
+  "blocked_reason": null,
+  "findings": "Implemented About (/about), Contact (/contact), Referral (/referral) reusing the FEAT-001 component library (Section, Container, Card, Button, FormField, AudienceCard, WhatsAppCTA). Verbatim copy added to src/content/pages.ts (about/contact/referral exports) sourced from CONTENT_INVENTORY.md; per-route SEO meta already present in src/content/seo.ts and routes already registered in src/routes.tsx from FEAT-001 scaffolding (previously stub pages). Each page renders exactly one H1 (verified: 1 each). About shows verified leadership names/titles from content/business.ts (Kgaogelo Ralephenya CA(SA) - Co-Founder & Managing Director; Naledi Gongxeka CA(SA) - Co-Founder); bios/photos rendered as 'Bio to be supplied by client' placeholders ([NOT VERIFIED]); 'How We Work' and 'Why' body are [CLIENT TO SUPPLY] placeholders; 'Who We Help' reuses the three shared AudienceCards. Contact includes the 'Prepare your enquiry' helper with the verbatim 'Nothing is sent to us until you submit the form below.' notice and a Service (optional) selector, plus an accessible form via FormField (labelled fields, aria-invalid/aria-describedby error wiring, noValidate client-side validation, submitted state only set true after validation passes - never on failure). Form endpoint and exact field set left as a clearly-commented [NOT VERIFIED] placeholder submit (no endpoint invented); verified WhatsApp 073 499 7148 prefilled CTAs and emails (info@, kralephenya@) included. Referral shows body copy, a 'Ready to make a referral?' CTA block with a 'Refer a Business' button, and reward terms as a clearly-labeled [NOT VERIFIED]/[CLIENT TO SUPPLY] placeholder (no amounts/terms invented). Verification: npm run build succeeds (no type errors), SSG emits real HTML per route. Greps pass: dist/about/index.html contains 'About Us' + 'Kgaogelo Ralephenya' + 'Naledi Gongxeka'; dist/contact/index.html contains 'Contact Us' + 'Prepare your enquiry' + the no-send notice; dist/referral/index.html contains 'Referral Programme' + placeholder."
+}
