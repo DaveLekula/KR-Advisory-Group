@@ -1,0 +1,11 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "_note": "Vercel equivalent of public/_redirects (Netlify/Cloudflare Pages). Keep both in sync: the 301 /referral-programme -> /referral.",
+  "redirects": [
+    {
+      "source": "/referral-programme",
+      "destination": "/referral",
+      "permanent": true
+    }
+  ]
+}

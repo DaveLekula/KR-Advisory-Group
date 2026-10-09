@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Head } from '@/components/seo/Head';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { serviceList, breadcrumbs } from '@/lib/jsonld';
 import { Container } from '@/components/primitives/Container';
 import { Section } from '@/components/primitives/Section';
 import { ServiceCard } from '@/components/cards/ServiceCard';
@@ -20,6 +22,7 @@ export function Services() {
   return (
     <>
       <Head {...meta['/services']} />
+      <JsonLd data={[...serviceList(), breadcrumbs('Services', '/services')]} />
       <Section>
         <Container>
           <h1 className="text-4xl sm:text-5xl">Our Services</h1>

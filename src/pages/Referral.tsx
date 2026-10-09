@@ -1,4 +1,6 @@
 import { Head } from '@/components/seo/Head';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { breadcrumbs } from '@/lib/jsonld';
 import { Container } from '@/components/primitives/Container';
 import { Section } from '@/components/primitives/Section';
 import { Card } from '@/components/primitives/Card';
@@ -10,6 +12,7 @@ export function Referral() {
   return (
     <>
       <Head {...meta['/referral']} />
+      <JsonLd data={breadcrumbs('Referral Programme', '/referral')} />
 
       {/* Intro */}
       <Section aria-labelledby="referral-title">

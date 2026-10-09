@@ -1,4 +1,6 @@
 import { Head } from '@/components/seo/Head';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { founders, breadcrumbs } from '@/lib/jsonld';
 import { Container } from '@/components/primitives/Container';
 import { Section } from '@/components/primitives/Section';
 import { Card } from '@/components/primitives/Card';
@@ -12,6 +14,7 @@ export function About() {
   return (
     <>
       <Head {...meta['/about']} />
+      <JsonLd data={[...founders(), breadcrumbs('About', '/about')]} />
 
       {/* Intro */}
       <Section aria-labelledby="about-title">

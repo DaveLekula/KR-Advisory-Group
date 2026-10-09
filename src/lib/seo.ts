@@ -12,3 +12,8 @@ export function canonical(pathname: string): string {
   const clean = pathname === '/' ? '' : pathname.replace(/\/$/, '');
   return `${SITE_URL}${clean}`;
 }
+
+/** Absolute URL for the default Open Graph / Twitter share image. */
+export function ogImage(): string {
+  return `${SITE_URL}/hero.jpg`;
+}

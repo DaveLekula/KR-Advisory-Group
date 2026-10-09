@@ -1,0 +1,3 @@
+# Netlify / Cloudflare Pages redirects.
+# 301: legacy referral path -> current referral route.
+/referral-programme  /referral  301

@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Head } from '@/components/seo/Head';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { organization, localBusiness } from '@/lib/jsonld';
 import { Container } from '@/components/primitives/Container';
 import { Section } from '@/components/primitives/Section';
 import { Button } from '@/components/primitives/Button';
@@ -19,6 +21,7 @@ export function Home() {
   return (
     <>
       <Head {...meta['/']} />
+      <JsonLd data={[organization(), localBusiness()]} />
 
       {/* Hero */}
       <Section aria-labelledby="home-hero-title">

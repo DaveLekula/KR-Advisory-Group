@@ -1,5 +1,7 @@
 import { useState, type FormEvent } from 'react';
 import { Head } from '@/components/seo/Head';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { breadcrumbs } from '@/lib/jsonld';
 import { Container } from '@/components/primitives/Container';
 import { Section } from '@/components/primitives/Section';
 import { Card } from '@/components/primitives/Card';
@@ -75,6 +77,7 @@ export function Contact() {
   return (
     <>
       <Head {...meta['/contact']} />
+      <JsonLd data={breadcrumbs('Contact', '/contact')} />
 
       {/* Intro */}
       <Section aria-labelledby="contact-title">
