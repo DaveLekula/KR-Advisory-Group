@@ -8,6 +8,7 @@ import { Button } from '@/components/primitives/Button';
 import { Card } from '@/components/primitives/Card';
 import { AudienceCard } from '@/components/cards/AudienceCard';
 import { WhatsAppCTA } from '@/components/layout/WhatsAppCTA';
+import { Hero } from '@/components/layout/Hero';
 import { services, audiences } from '@/content/services';
 import { home } from '@/content/pages';
 import { meta } from '@/routes';
@@ -23,35 +24,8 @@ export function Home() {
       <Head {...meta['/']} />
       <JsonLd data={[organization(), localBusiness()]} />
 
-      {/* Hero */}
-      <Section aria-labelledby="home-hero-title">
-        <Container className="grid items-center gap-10 lg:grid-cols-2">
-          <div>
-            <p className="font-mono text-xs uppercase tracking-wide text-brass-deep">
-              CA(SA)-led · Accounting · Tax · Internal Audit
-            </p>
-            <h1 id="home-hero-title" className="mt-4 font-display text-4xl text-ink sm:text-5xl">
-              {home.heroHeading}
-            </h1>
-            <p className="mt-6 max-w-xl text-lg text-muted-foreground">
-              {home.heroSubCopy}
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Button as="a" href="/services" variant="primary">
-                Explore Our Services
-              </Button>
-              <WhatsAppCTA kind="consultation" variant="secondary" />
-            </div>
-          </div>
-          <img
-            src={home.heroImage.src}
-            alt={home.heroImage.alt}
-            className="h-full w-full rounded-lg border border-border object-cover shadow-sm"
-            width={1200}
-            height={800}
-          />
-        </Container>
-      </Section>
+      {/* Hero — immersive full-viewport treatment (see components/layout/Hero.tsx). */}
+      <Hero />
 
       {/* Service list (6 shown on home) */}
       <Section className="bg-muted" aria-labelledby="home-services-title">

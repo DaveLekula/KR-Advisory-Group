@@ -83,3 +83,147 @@
     }
   }
 }
+
+/*
+ * ---------------------------------------------------------------------------
+ * HERO — immersive, award-quality treatment.
+ *
+ * Design intent: full-viewport architectural hero in the language of a
+ * premium advisory firm (Deloitte / McKinsey / BCG / PwC / EY), NOT a SaaS
+ * landing page. The verified city/building image becomes a full-width
+ * background; layered navy gradients, a fine architectural grid, a brass
+ * horizon line, and glass accents build depth. All colours reuse the OKLCH
+ * tokens above. Light-on-dark here, so bright brass is used for accents
+ * (high contrast on deep navy) while the headline is near-white.
+ *
+ * Motion is subtle and fully disabled under prefers-reduced-motion.
+ * ---------------------------------------------------------------------------
+ */
+@layer components {
+  /* Deep navy base behind the image, so letterboxing/edges stay on-brand. */
+  .hero-surface {
+    background-color: oklch(16% 0.04 258);
+  }
+
+  /* Layered gradient overlay: dark at the bottom/left for text legibility,
+     with a cool navy wash and a faint brass glow top-right for warmth. */
+  .hero-overlay {
+    background:
+      radial-gradient(
+        120% 90% at 78% 12%,
+        oklch(62% 0.125 75 / 0.22) 0%,
+        transparent 46%
+      ),
+      linear-gradient(
+        180deg,
+        oklch(16% 0.04 258 / 0.55) 0%,
+        oklch(16% 0.04 258 / 0.68) 42%,
+        oklch(12% 0.035 258 / 0.92) 100%
+      ),
+      linear-gradient(
+        100deg,
+        oklch(14% 0.04 258 / 0.9) 0%,
+        oklch(16% 0.04 258 / 0.35) 55%,
+        transparent 100%
+      );
+  }
+
+  /* Refined architectural grid — fine brass lines, masked to fade outward so
+     it reads as depth rather than a "generic Tailwind grid showcase". */
+  .hero-grid {
+    background-image:
+      linear-gradient(oklch(75.5% 0.115 82 / 0.07) 1px, transparent 1px),
+      linear-gradient(90deg, oklch(75.5% 0.115 82 / 0.07) 1px, transparent 1px);
+    background-size: 64px 64px;
+    -webkit-mask-image: radial-gradient(130% 90% at 50% 0%, #000 35%, transparent 78%);
+    mask-image: radial-gradient(130% 90% at 50% 0%, #000 35%, transparent 78%);
+  }
+
+  /* Glass accent surface for stat/credential chips. */
+  .hero-glass {
+    background: oklch(100% 0 0 / 0.06);
+    border: 1px solid oklch(100% 0 0 / 0.12);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+  }
+
+  /* Thin brass horizon rule used as an architectural divider. */
+  .hero-rule {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      oklch(75.5% 0.115 82 / 0.65) 18%,
+      oklch(75.5% 0.115 82 / 0.65) 82%,
+      transparent 100%
+    );
+  }
+
+  /* Primary CTA on dark: solid brass fill, ink text, luxe hover lift. */
+  .btn-hero-primary {
+    background-color: oklch(75.5% 0.115 82);
+    color: oklch(20% 0.045 258);
+    box-shadow: 0 10px 30px -12px oklch(75.5% 0.115 82 / 0.6);
+    transition:
+      transform 0.25s cubic-bezier(0.16, 1, 0.32, 1),
+      background-color 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+  .btn-hero-primary:hover {
+    background-color: oklch(80% 0.115 82);
+    transform: translateY(-2px);
+    box-shadow: 0 16px 40px -12px oklch(75.5% 0.115 82 / 0.75);
+  }
+
+  /* Secondary CTA on dark: glass outline that warms to brass on hover. */
+  .btn-hero-ghost {
+    background: oklch(100% 0 0 / 0.04);
+    border: 1px solid oklch(100% 0 0 / 0.28);
+    color: oklch(97% 0.006 88);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    transition:
+      transform 0.25s cubic-bezier(0.16, 1, 0.32, 1),
+      border-color 0.25s ease,
+      background-color 0.25s ease;
+  }
+  .btn-hero-ghost:hover {
+    border-color: oklch(75.5% 0.115 82 / 0.9);
+    background: oklch(100% 0 0 / 0.08);
+    transform: translateY(-2px);
+  }
+}
+
+/* Entrance animation — staggered rise/fade. Disabled for reduced motion. */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes hero-rise {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .hero-animate {
+    opacity: 0;
+    animation: hero-rise 0.9s cubic-bezier(0.16, 1, 0.32, 1) forwards;
+  }
+  .hero-delay-1 { animation-delay: 0.08s; }
+  .hero-delay-2 { animation-delay: 0.18s; }
+  .hero-delay-3 { animation-delay: 0.30s; }
+  .hero-delay-4 { animation-delay: 0.42s; }
+
+  /* Very slow drift on the brass glow for living depth, not distraction. */
+  @keyframes hero-drift {
+    0%, 100% { opacity: 0.55; transform: translate3d(0, 0, 0); }
+    50% { opacity: 0.8; transform: translate3d(0, -10px, 0); }
+  }
+  .hero-drift {
+    animation: hero-drift 14s ease-in-out infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-animate { opacity: 1; }
+}
