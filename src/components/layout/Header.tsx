@@ -15,7 +15,7 @@ export function Header() {
           <span className="font-display text-lg text-ink">{business.name}</span>
         </Link>
 
-        <nav aria-label="Primary" className="hidden items-center gap-6 md:flex">
+        <nav aria-label="Primary" className="hidden items-center gap-6 lg:flex">
           {navLinks.map((link) => (
             <NavLink
               key={link.href}
@@ -33,7 +33,7 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="hidden md:block">
+        <div className="hidden lg:block">
           <WhatsAppCTA kind="consultation" />
         </div>
 
