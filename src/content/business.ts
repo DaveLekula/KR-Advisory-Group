@@ -35,6 +35,21 @@ export const business = {
   copyright: '© 2026 KR Advisory Group. All rights reserved.',
 } as const;
 
+/**
+ * Grouped contact details for the Contact/Referral pages. Reuses ONLY the
+ * verified values already defined above (verbatim from the live site) — no new
+ * facts are introduced here. The primary enquiry email on the live site's
+ * contact copy is kralephenya@kradvisorygroup.co.za.
+ */
+export const contactDetails = {
+  address: business.address,
+  phoneDisplay: business.phoneDisplay,
+  whatsappUrl: business.whatsapp.url,
+  whatsappConsultationUrl: business.whatsapp.consultationUrl,
+  whatsappQuestionUrl: business.whatsapp.questionUrl,
+  email: business.emails.ralephenya,
+} as const;
+
 export const leadership = [
   {
     name: 'Kgaogelo Ralephenya',
