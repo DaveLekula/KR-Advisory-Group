@@ -2,6 +2,7 @@ import { Container } from '@/components/primitives/Container';
 import { Button } from '@/components/primitives/Button';
 import { HeroReveal } from '@/components/motion/HeroReveal';
 import { SplitLines } from '@/components/motion/SplitLines';
+import { asset } from '@/lib/asset';
 
 interface PageHeroProps {
   /** Mono uppercase positioning line above the title. */
@@ -36,7 +37,7 @@ export function PageHero({ eyebrow, title, supporting, image, cta }: PageHeroPro
       className="hero-surface relative overflow-hidden"
     >
       <img
-        src={image.src}
+        src={asset(image.src)}
         alt={image.alt}
         aria-hidden="true"
         data-hero-parallax

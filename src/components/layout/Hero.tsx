@@ -2,6 +2,7 @@ import { Container } from '@/components/primitives/Container';
 import { HeroReveal } from '@/components/motion/HeroReveal';
 import { business } from '@/content/business';
 import { home } from '@/content/pages';
+import { asset } from '@/lib/asset';
 
 /**
  * Immersive, award-quality hero for the home page.
@@ -32,7 +33,7 @@ export function Hero() {
       {/* Full-width immersive background image (decorative; headline carries meaning).
           data-hero-parallax marks it as the Effect-6 scrubbed parallax target. */}
       <img
-        src={home.heroImage.src}
+        src={asset(home.heroImage.src)}
         alt=""
         aria-hidden="true"
         data-hero-parallax
