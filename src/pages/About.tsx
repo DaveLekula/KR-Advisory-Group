@@ -73,9 +73,12 @@ export function About() {
         </Container>
       </Section>
 
-      {/* (C) Our Leadership — verified names/credentials/titles only; a brass
-          monogram instead of any portrait. Bios are [NOT VERIFIED] and render
-          as a clearly-labelled placeholder — never fabricated. */}
+      {/* (C) Our Leadership — verified names/credentials/titles with the
+          founder biographies and expertise labels RESTORED verbatim from the
+          original live site. A brass monogram is retained instead of a
+          portrait: the founder headshot is not present in the project and is
+          never fabricated (flagged in CONTENT_GAP_ANALYSIS.md). Cards grow
+          naturally to fit the full bio — no fixed height, no truncation. */}
       <Section aria-labelledby="about-leadership-title">
         <Container>
           <h2 id="about-leadership-title" className="font-display text-3xl text-ink sm:text-4xl">
@@ -97,14 +100,19 @@ export function About() {
                   <p className="mt-1 font-mono text-xs uppercase tracking-wide text-brass-deep">
                     {person.title}
                   </p>
-                  {/*
-                    [NOT VERIFIED] Individual biographies are JS-rendered on the
-                    live site and not confirmed in server HTML. Render a clearly
-                    labelled "to be confirmed" placeholder — do NOT fabricate.
-                  */}
-                  <p className="mt-4 text-sm italic text-muted-foreground">
-                    {about.leadership.bioPlaceholder}
+                  <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                    {person.bio}
                   </p>
+                  <ul className="mt-4 flex flex-wrap gap-2">
+                    {person.expertise.map((label) => (
+                      <li
+                        key={label}
+                        className="rounded border border-brass/40 bg-surface-ivory px-2 py-0.5 font-mono text-[11px] uppercase tracking-wide text-brass-deep"
+                      >
+                        {label}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </Card>
             ))}
@@ -112,17 +120,26 @@ export function About() {
         </Container>
       </Section>
 
-      {/* (D) How We Work — the engagement-process steps are [NOT VERIFIED].
-          Render a clearly-labelled client-confirmation placeholder rather than
-          a fabricated numbered process. */}
+      {/* (D) How We Work — the three business principles RESTORED verbatim from
+          the original live site, rendered as a 3-up numbered-card grid that
+          reuses the Home "What we do" card language (numeric gold eyebrow,
+          display title, muted body). Stacks on mobile. */}
       <Section className="bg-surface-stone" aria-labelledby="about-how-title">
-        <Container className="max-w-3xl">
+        <Container>
           <h2 id="about-how-title" className="font-display text-3xl text-ink sm:text-4xl">
             {about.howWeWork.heading}
           </h2>
-          <p className="mt-6 rounded-lg border border-dashed border-border bg-background p-5 text-base italic text-muted-foreground">
-            {about.howWeWork.bodyPlaceholder}
-          </p>
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {about.principles.map((principle) => (
+              <Card as="article" key={principle.number}>
+                <span className="font-mono text-sm text-brass-deep" aria-hidden="true">
+                  {principle.number}
+                </span>
+                <h3 className="mt-2 font-display text-xl text-ink">{principle.title}</h3>
+                <p className="mt-2 text-muted-foreground">{principle.body}</p>
+              </Card>
+            ))}
+          </div>
         </Container>
       </Section>
 

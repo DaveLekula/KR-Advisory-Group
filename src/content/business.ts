@@ -56,12 +56,37 @@ export const leadership = [
     credential: 'CA(SA)',
     title: 'Co-Founder & Managing Director',
     email: 'kralephenya@kradvisorygroup.co.za',
+    // Verbatim: recovered founder biography from the original live site.
+    bio: 'Kgaogelo Ralephenya is a Chartered Accountant of South Africa (CA(SA)) and co-founder and Managing Director of KR Advisory Group. He is a graduate of the University of the Witwatersrand, holding a Bachelor of Accounting Science and a Postgraduate Diploma in Accountancy. He has experience across external audit, financial reporting, internal controls and public-sector auditing, gained within a Big 4 firm with engagements in the Netherlands and the United Kingdom. He has worked on UK, US and South African listed clients across IFRS, UK GAAP and US GAAP reporting, in PCAOB, SOX and other regulated control environments, and on PFMA and MFMA public-sector audits. He leads the firm\u2019s work with growing businesses and public institutions across South Africa.',
+    // Verbatim: recovered expertise labels (8, exact order) from the live site.
+    expertise: [
+      'External Audit',
+      'IFRS, UK GAAP & US GAAP',
+      'PCAOB Environments',
+      'SOX & Internal Controls',
+      'PFMA & MFMA Public-Sector Auditing',
+      'Audit Readiness',
+      'Financial Analysis',
+      'Risk and Control Assessment',
+    ],
   },
   {
     name: 'Naledi Gongxeka',
     credential: 'CA(SA)',
     title: 'Co-Founder',
     email: 'ngongxeka@kradvisorygroup.co.za',
+    // Verbatim: recovered founder biography from the original live site.
+    bio: 'Naledi Gongxeka is a Chartered Accountant of South Africa (CA(SA)) and co-founder of KR Advisory Group. He is a graduate of the University of the Witwatersrand, holding a Bachelor of Accounting Science and a Postgraduate Diploma in Accountancy. His experience spans external audit, financial reporting, internal controls and public-sector auditing, gained at one of the Big 4 firms.',
+    // Verbatim: recovered expertise labels (7, exact order) from the live site.
+    expertise: [
+      'External Audit',
+      'IFRS, UK GAAP & US GAAP',
+      'SOX & Internal Controls',
+      'PFMA & MFMA Public-Sector Auditing',
+      'Audit Readiness',
+      'Financial Analysis',
+      'Risk and Control Assessment',
+    ],
   },
 ] as const;
 

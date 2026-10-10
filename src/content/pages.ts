@@ -52,10 +52,11 @@ export const home = {
 } as const;
 
 /**
- * About page copy — verbatim from CONTENT_INVENTORY.md ("Page: About").
- * Leadership names/titles are the verified facts (see content/business.ts);
- * individual bios and headshots are [NOT VERIFIED] and must be rendered as
- * clearly-labeled placeholders, never fabricated.
+ * About page copy — verbatim from CONTENT_INVENTORY.md ("Page: About") and the
+ * original live site. Leadership names/titles/bios/expertise are the verified
+ * facts (see content/business.ts). The founder professional headshot image is
+ * still unavailable in the project (monogram treatment retained); it remains
+ * flagged in CONTENT_GAP_ANALYSIS.md and is never fabricated.
  */
 export const about = {
   /** H1 — verbatim from the live site (About spec). */
@@ -78,17 +79,33 @@ export const about = {
     'We help organisations manage their finances, strengthen their internal controls, prepare for audits and make informed financial decisions. Whether you are a growing SME looking for reliable financial reporting, a business preparing for an external audit, or a public institution working to strengthen governance and audit readiness, we provide practical solutions tailored to your organisation.',
   leadership: {
     heading: 'Leadership',
-    // [CLIENT TO SUPPLY] / [NOT VERIFIED] — individual founder biographies are
-    // not on the live site; placeholder only, pending client confirmation.
-    bioPlaceholder: '[CLIENT TO SUPPLY] Founder bio pending client confirmation.',
+    // Founder bios + expertise are RESTORED verbatim from the original live
+    // site and live on each entry in content/business.ts (leadership[].bio /
+    // .expertise). The former [CLIENT TO SUPPLY] bio placeholder is resolved
+    // and removed.
   },
   howWeWork: {
     heading: 'How We Work',
-    // [CLIENT TO SUPPLY] / [NOT VERIFIED] — the engagement-process steps are not
-    // on the live site; placeholder only, pending client confirmation.
-    bodyPlaceholder:
-      '[CLIENT TO SUPPLY] "How We Work" engagement-process steps pending client confirmation.',
   },
+  // Three business principles — RESTORED verbatim from the original live site.
+  // Rendered as a 3-up numbered-card grid in About Section (D) "How We Work".
+  principles: [
+    {
+      number: '01',
+      title: 'Financial clarity',
+      body: 'Reliable, decision-ready financial information. We keep the numbers current, credible and understandable — so owners and management can act with confidence.',
+    },
+    {
+      number: '02',
+      title: 'Stronger controls',
+      body: 'Controls that protect assets and manage risk. We look past symptoms to root causes, and help management implement improvements that hold.',
+    },
+    {
+      number: '03',
+      title: 'Better decisions',
+      body: 'Advice grounded in your numbers. From tax planning to funding readiness, every recommendation is tied to your organisation\u2019s actual position.',
+    },
+  ],
   whoWeHelp: {
     heading: 'Who We Help',
   },
@@ -166,5 +183,67 @@ export const referral = {
     // the public Referral page (handled in FEAT-004). Pending client confirmation.
     bodyPlaceholder:
       '[CLIENT TO SUPPLY] Referral reward structure (amounts, eligibility, terms) pending client confirmation.',
+  },
+  // RESTORED verbatim from the original live site. "Who can refer" professional
+  // networks (7 items, exact).
+  whoCanRefer: {
+    heading: 'Who can refer',
+    supporting: 'Our professional networks are at the heart of the programme.',
+    items: [
+      'Accountants and bookkeepers',
+      'Attorneys',
+      'Financial advisers',
+      'Business consultants',
+      'HR and payroll consultants',
+      'Property professionals',
+      'Other business contacts',
+    ],
+  },
+  // RESTORED verbatim from the original live site. "What you can refer" needs
+  // (10 items, exact).
+  whatYouCanRefer: {
+    heading: 'What you can refer',
+    supporting: 'Businesses or organisations requiring:',
+    items: [
+      'Accounting and financial reporting',
+      'Tax services',
+      'Internal audit',
+      'Audit-readiness support',
+      'Business advisory',
+      'Financial modelling',
+      'Business plans',
+      'Funding-readiness support',
+      'Public-sector advisory',
+      'Internal control and risk advisory',
+    ],
+  },
+  // RESTORED verbatim from the original live site. Five programme terms (exact).
+  // NOTE: no reward amounts/percentages are included anywhere; these terms are
+  // flagged in CONTENT_GAP_ANALYSIS.md for final legal/client approval before
+  // production publication.
+  programmeTerms: {
+    heading: 'Referral Programme Terms',
+    terms: [
+      {
+        number: '01',
+        body: 'Referral rewards are subject to KR Advisory Group\u2019s referral-programme terms.',
+      },
+      {
+        number: '02',
+        body: 'A referral reward becomes payable only after KR Advisory Group has received payment from the referred client.',
+      },
+      {
+        number: '03',
+        body: 'The programme does not apply where a referral or referral payment would conflict with applicable legislation, professional requirements, independence requirements, ethical obligations or the policies of the relevant organisation or professional body.',
+      },
+      {
+        number: '04',
+        body: 'Referral rewards are calculated on the qualifying first invoice actually received and exclude amounts subsequently refunded, reversed or written off.',
+      },
+      {
+        number: '05',
+        body: 'KR Advisory Group reserves the right to approve or decline referrals and to amend the programme terms from time to time.',
+      },
+    ],
   },
 } as const;

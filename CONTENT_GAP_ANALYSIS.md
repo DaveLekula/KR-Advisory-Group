@@ -18,8 +18,7 @@ document missing information for client confirmation rather than inventing conte
 
 | Page/Section | Current local content | Original website content | Missing/incomplete | Verified source | Proposed restoration | Client approval needed |
 | --- | --- | --- | --- | --- | --- | --- |
-| About — Our Leadership (founder bios) | Clearly-labelled placeholder "[CLIENT TO SUPPLY] Founder bio pending client confirmation." shown under each founder's name/credential/title; no fabricated biography and no portrait photo. | No biographical narrative was found on the live site — only names, credentials and titles. | Founder biographies for Kgaogelo Ralephenya, CA(SA) and Naledi Gongxeka, CA(SA). | NOT VERIFIED | Client to supply short professional bios; replace the placeholder once received. | Yes |
-| About — "How We Work" | Clearly-labelled client-confirmation placeholder (dashed-border "to be confirmed" treatment); no fabricated numbered process. | No engagement-process/"how we work" steps found on the live site. | The actual engagement/process steps. | NOT VERIFIED | Client to confirm the process steps, or confirm the section should be omitted. | Yes |
+| About — Our Leadership (founder **headshot image**) | Brass monogram/initials treatment retained for both founders; **no portrait photo**. | The live site uses a real professional headshot for Kgaogelo Ralephenya. | The actual professional headshot image file(s). | NOT VERIFIED | Client to supply the approved headshot image(s); until then the monogram treatment stays. No photo is ever fabricated. | Yes |
 | Referral — "How Referrals Work" | Section omitted from the public page (no fabricated steps rendered). | No referral process steps found on the live site. | The step-by-step referral workflow. | NOT VERIFIED | Client to confirm the steps; section stays omitted until confirmed. | Yes |
 | Referral — Reward Structure (amounts/eligibility/terms) | **Omitted** from public copy — the `[CLIENT TO SUPPLY]` reward block does **not** render on the live Referral page (verified: `dist/referral/index.html` contains 0 occurrences of "CLIENT TO SUPPLY" / "NOT VERIFIED"). | No reward amounts, eligibility rules or terms appear anywhere on the live site. | Reward amounts, eligibility criteria and programme terms. | NOT VERIFIED | Client to supply the reward structure; publish only after confirmation. Do not publish any figure until then. | Yes |
 | Contact / Footer — Business hours | Not published on any page. | No business hours found on the live site. | Opening hours. | NOT VERIFIED | Client to supply hours; add to Contact "Location" and/or LocalBusiness JSON-LD once confirmed. | Yes |
@@ -34,7 +33,12 @@ document missing information for client confirmation rather than inventing conte
 | About — intro | `about.intro`: "KR Advisory Group is a CA(SA)-led practice serving growing businesses and public institutions across South Africa." | Same, verbatim. | None — restored. | live site | Already restored verbatim. | No |
 | About — body | `about.body`: "We help organisations manage their finances, strengthen their internal controls, prepare for audits and make informed financial decisions…" | Same, verbatim. | None — restored. | live site | Already restored verbatim. | No |
 | About — belief statement | `about.belief`: "Our work is led by Chartered Accountants and built on a simple belief: accounting should do more than keep you compliant — it should give you the clarity and control to run a stronger organisation." | Same, verbatim. | None — restored. | live site | Already restored verbatim. | No |
-| About — leadership names/credentials/titles | Kgaogelo Ralephenya, CA(SA) — Co-Founder & Managing Director; Naledi Gongxeka, CA(SA) — Co-Founder. | Same, verbatim. | Only bios are missing (see gaps table). | live site | Already restored verbatim (names/titles only). | No |
+| About — leadership names/credentials/titles | Kgaogelo Ralephenya, CA(SA) — Co-Founder & Managing Director; Naledi Gongxeka, CA(SA) — Co-Founder. | Same, verbatim. | None — restored. Only the headshot image is still missing (see gaps table). | live site | Already restored verbatim (names/titles only). | No |
+| About — Our Leadership (founder bios + expertise) | Full biographies for both founders rendered under each card (cards expand naturally, no truncation), plus the expertise-label chip lists — Kgaogelo (8 labels), Naledi (7 labels). Source: `content/business.ts` `leadership[].bio` / `.expertise`. | Same, verbatim (bios and expertise labels recovered from the original site). | None — restored. | live site | Already restored verbatim. | No |
+| About — "How We Work" (three business principles) | Three-column numbered-card grid (01 Financial clarity, 02 Stronger controls, 03 Better decisions) under the retained "How We Work" heading. Source: `pages.ts` `about.principles`. | Same, verbatim (three principles). | None — restored. | live site | Already restored verbatim. | No |
+| Referral — "Who can refer" | New section after Programme Overview with supporting line "Our professional networks are at the heart of the programme." and the 7 professional-network entries as a gold-check list. Source: `pages.ts` `referral.whoCanRefer`. | Same, verbatim (7 entries). | None — restored. | live site | Already restored verbatim. | No |
+| Referral — "What you can refer" | Second column alongside "Who can refer" (two columns desktop, stacked mobile) with supporting line "Businesses or organisations requiring:" and the 10 service-need entries. Source: `pages.ts` `referral.whatYouCanRefer`. | Same, verbatim (10 entries). | None — restored. | live site | Already restored verbatim. | No |
+| Referral — "Referral Programme Terms" | New ivory section with gold uppercase eyebrow and 5 numbered terms (01–05) on subtle row dividers; **no reward amounts/percentages**. Source: `pages.ts` `referral.programmeTerms`. | Same, verbatim (5 terms). | None — content restored. | live site | Restored verbatim. **Flagged for final legal/client approval before production publication.** | Yes (legal/client sign-off before go-live) |
 | Contact — intro | `contact.intro`: "We would be pleased to discuss your business or organisation's requirements — accounting, tax, internal audit, audit readiness, business advisory or funding preparation." | Same, verbatim. | None — restored. | live site | Already restored verbatim. | No |
 | Contact — FAQ (one Q&A + closing) | Verified Q "How do I get started / book a consultation?" with its verified answer and closing line, in an accessible accordion. | Same, verbatim (single Q&A). | None — restored (no extra Q&As invented). | live site | Already restored verbatim. | No |
 | Contact — verified details | Office address "64 Eagle Street, Kikuyu Estate, Waterfall, Midrand, Johannesburg"; WhatsApp/phone 073 499 7148; email Kralephenya@kradvisorygroup.co.za. | Same, verbatim. | None — restored. | live site | Already restored verbatim. | No |
@@ -43,13 +47,20 @@ document missing information for client confirmation rather than inventing conte
 
 ## Summary
 
-- **7 open gaps** require client confirmation before the corresponding placeholder
-  (or omitted) content can be finalised: founder bios, About "How We Work", Referral
-  "How Referrals Work", Referral Reward Structure, business hours, map/location
-  embed, and the Contact form endpoint + field set.
-- **10 restored content groups** were recovered verbatim from the live site and need
-  no further approval.
+- **6 open gaps** require client confirmation before the corresponding placeholder
+  (or omitted) content can be finalised: the founder **headshot image**, Referral
+  "How Referrals Work", Referral Reward Structure (amounts/eligibility), business
+  hours, map/location embed, and the Contact form endpoint + field set.
+- **16 restored content groups** were recovered verbatim from the live site and need
+  no further approval, with one exception: the **Referral Programme Terms** are
+  restored verbatim but **flagged for final legal/client sign-off before production**.
+- This refinement restored: both founder biographies and their expertise labels
+  (Kgaogelo 8, Naledi 7), the three business principles in "How We Work", and the
+  Referral "Who can refer" (7), "What you can refer" (10) and "Referral Programme
+  Terms" (5) sections. The former About bio placeholder and "How We Work" placeholder
+  are resolved and removed from the content modules.
 - No reward figures, bios, process steps, hours or map data were fabricated. Where a
-  value was unavailable it is either a clearly-labelled placeholder (About bios /
-  "How We Work") or omitted from public copy (Referral Reward Structure, "How
-  Referrals Work", map, hours).
+  value was unavailable it remains either a clearly-labelled gap (founder headshot
+  image) or omitted from public copy (Referral Reward Structure amounts, "How
+  Referrals Work" steps, map, hours). No reward amount appears in any customer-facing
+  copy.
