@@ -1,5 +1,7 @@
 import { Container } from '@/components/primitives/Container';
 import { Button } from '@/components/primitives/Button';
+import { HeroReveal } from '@/components/motion/HeroReveal';
+import { SplitLines } from '@/components/motion/SplitLines';
 
 interface PageHeroProps {
   /** Mono uppercase positioning line above the title. */
@@ -28,7 +30,8 @@ export function PageHero({ eyebrow, title, supporting, image, cta }: PageHeroPro
   const titleId = 'page-hero-title';
 
   return (
-    <section
+    <HeroReveal
+      as="section"
       aria-labelledby={titleId}
       className="hero-surface relative overflow-hidden"
     >
@@ -36,6 +39,7 @@ export function PageHero({ eyebrow, title, supporting, image, cta }: PageHeroPro
         src={image.src}
         alt={image.alt}
         aria-hidden="true"
+        data-hero-parallax
         className="absolute inset-0 h-full w-full object-cover"
         width={1920}
         height={1280}
@@ -46,25 +50,25 @@ export function PageHero({ eyebrow, title, supporting, image, cta }: PageHeroPro
 
       <Container className="relative z-10 py-24 sm:py-28">
         <div className="max-w-3xl">
-          <p className="font-mono text-xs uppercase tracking-[0.3em] text-brass">
+          <p className="hero-reveal font-mono text-xs uppercase tracking-[0.3em] text-brass">
             {eyebrow}
           </p>
-          <div className="hero-rule mt-6 h-px w-28" aria-hidden="true" />
+          <div className="hero-reveal hero-rule mt-6 h-px w-28" aria-hidden="true" />
           <h1
             id={titleId}
             className="mt-7 font-display font-light leading-[1.02] tracking-[-0.02em] text-[clamp(2.4rem,6vw,4.25rem)]"
             style={{ color: 'oklch(98% 0.01 88)' }}
           >
-            {title}
+            <SplitLines mode="single">{title}</SplitLines>
           </h1>
           <p
-            className="mt-7 max-w-2xl text-lg leading-relaxed"
+            className="hero-reveal mt-7 max-w-2xl text-lg leading-relaxed"
             style={{ color: 'oklch(88% 0.012 258)' }}
           >
             {supporting}
           </p>
           {cta ? (
-            <div className="mt-9">
+            <div className="hero-reveal mt-9">
               <Button as="a" href={cta.href} variant="primary">
                 {cta.label}
               </Button>
@@ -72,7 +76,7 @@ export function PageHero({ eyebrow, title, supporting, image, cta }: PageHeroPro
           ) : null}
         </div>
       </Container>
-    </section>
+    </HeroReveal>
   );
 }
 
