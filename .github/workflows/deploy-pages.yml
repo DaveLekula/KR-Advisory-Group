@@ -70,3 +70,9 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          # Auto-enable Pages (with GitHub Actions as source) if it isn't
+          # already — guards against the "action reports success before the
+          # Pages site is provisioned" 404 on a brand-new Pages setup. Requires
+          # the pages:write + id-token:write permissions already granted above.
+          enablement: true
