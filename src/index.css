@@ -42,6 +42,13 @@
   --muted: oklch(95.5% 0.008 88);
   --muted-foreground: oklch(48% 0.028 255);
 
+  /* Premium editorial section surfaces (sRGB hex per brand brief).
+     Used to create alternating ivory/stone rhythm across the Services bands —
+     the single source of truth for these two tones, mapped to Tailwind as
+     `bg-surface-ivory` / `bg-surface-stone`. */
+  --surface-ivory: #f7f4ed;
+  --surface-stone: #f1eee7;
+
   --radius: 0.625rem;
 }
 
