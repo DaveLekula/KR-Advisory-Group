@@ -3,8 +3,17 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'node:path';
 
+// Review-only GitHub Pages build: when GITHUB_PAGES=true the site is served
+// from the project-pages subpath (https://<user>.github.io/<repo>/), so Vite
+// needs a matching base and the SSG router picks it up via BASE_URL in
+// src/main.tsx. Production (Netlify/Cloudflare) builds leave GITHUB_PAGES unset
+// and keep base '/', so this review config never affects the production domain.
+const isGitHubPages = process.env.GITHUB_PAGES === 'true';
+const pagesBase = process.env.PAGES_BASE ?? '/KR-Advisory-Group/';
+
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: isGitHubPages ? pagesBase : '/',
   plugins: [react()],
   resolve: {
     alias: {

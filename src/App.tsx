@@ -1,8 +1,18 @@
 import { useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
+import { Head } from 'vite-react-ssg';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { setupReveal } from '@/hooks/useReveal';
+
+/**
+ * Review-only flag. Set via VITE_REVIEW_BUILD=true in the GitHub Pages build
+ * (see .github/workflows/deploy-pages.yml). When true, every page gets a
+ * robots `noindex, nofollow` directive and a visible "preview" banner so this
+ * client-review copy is never indexed and is clearly distinguished from the
+ * production site. Unset in production builds, so production SEO is untouched.
+ */
+const IS_REVIEW_BUILD = import.meta.env.VITE_REVIEW_BUILD === 'true';
 
 /**
  * Layout shell shared by every route: semantic header / main / footer with an
@@ -84,12 +94,27 @@ export function App() {
 
   return (
     <>
+      {IS_REVIEW_BUILD && (
+        <Head>
+          <meta name="robots" content="noindex, nofollow" />
+          <meta name="googlebot" content="noindex, nofollow" />
+        </Head>
+      )}
       <a
         href="#main"
         className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded focus:bg-ink focus:px-4 focus:py-2 focus:text-background"
       >
         Skip to content
       </a>
+      {IS_REVIEW_BUILD && (
+        <p
+          role="note"
+          className="bg-ink px-4 py-1.5 text-center font-mono text-[11px] uppercase tracking-wide text-background"
+        >
+          Preview — client review copy, not the live site. Content and referral
+          terms subject to final approval.
+        </p>
+      )}
       <Header />
       <main id="main" className={isHome ? undefined : 'pt-16'}>
         <Outlet />
