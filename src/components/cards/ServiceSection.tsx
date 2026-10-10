@@ -1,6 +1,8 @@
 import type { CSSProperties } from 'react';
 import { Container } from '@/components/primitives/Container';
 import { WhatsAppCTA } from '@/components/layout/WhatsAppCTA';
+import { Reveal } from '@/components/motion/Reveal';
+import { StaggerReveal } from '@/components/motion/StaggerReveal';
 import { cn } from '@/lib/cn';
 import type { Service } from '@/content/services';
 
@@ -66,8 +68,9 @@ export function ServiceSection({ service, tone }: ServiceSectionProps) {
     >
       <Container>
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
-          {/* LEFT — identity + narrative + CTAs */}
-          <div className="lg:col-span-5">
+          {/* LEFT — identity + narrative + CTAs. Grouped reveal so the eyebrow,
+              title, promise, divider and CTA group ride in as one sequence. */}
+          <Reveal className="lg:col-span-5">
             <p
               className={cn(
                 'font-mono text-xs uppercase tracking-[0.25em]',
@@ -110,7 +113,7 @@ export function ServiceSection({ service, tone }: ServiceSectionProps) {
                 }
               />
             </div>
-          </div>
+          </Reveal>
 
           {/* RIGHT — what this includes */}
           <div className="lg:col-span-7">
@@ -124,7 +127,7 @@ export function ServiceSection({ service, tone }: ServiceSectionProps) {
               What This Includes
             </h3>
             <hr className={cn('mt-4 border-t', dividerColor)} />
-            <ul className="mt-6 grid gap-x-10 gap-y-3 sm:grid-cols-2">
+            <StaggerReveal as="ul" className="mt-6 grid gap-x-10 gap-y-3 sm:grid-cols-2">
               {service.includes.map((item) => (
                 <li
                   key={item}
@@ -137,7 +140,7 @@ export function ServiceSection({ service, tone }: ServiceSectionProps) {
                   <span>{item}</span>
                 </li>
               ))}
-            </ul>
+            </StaggerReveal>
           </div>
         </div>
       </Container>

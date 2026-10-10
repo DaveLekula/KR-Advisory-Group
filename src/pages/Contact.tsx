@@ -9,6 +9,9 @@ import { Button } from '@/components/primitives/Button';
 import { FormField } from '@/components/primitives/FormField';
 import { PageHero } from '@/components/layout/PageHero';
 import { WhatsAppCTA } from '@/components/layout/WhatsAppCTA';
+import { Reveal } from '@/components/motion/Reveal';
+import { StaggerReveal } from '@/components/motion/StaggerReveal';
+import { STAGGER } from '@/animations/motionTokens';
 import { contact, home } from '@/content/pages';
 import { services } from '@/content/services';
 import { business, contactDetails } from '@/content/business';
@@ -103,17 +106,19 @@ export function Contact() {
           <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
             {/* LEFT — intro + verified contact details. */}
             <div>
-              <h2
-                id="contact-details-title"
-                className="font-display text-3xl text-ink sm:text-4xl"
-              >
-                Get in touch
-              </h2>
-              <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-                {contact.intro}
-              </p>
+              <Reveal>
+                <h2
+                  id="contact-details-title"
+                  className="font-display text-3xl text-ink sm:text-4xl"
+                >
+                  Get in touch
+                </h2>
+                <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
+                  {contact.intro}
+                </p>
+              </Reveal>
 
-              <dl className="mt-8 space-y-6">
+              <StaggerReveal as="dl" className="mt-8 space-y-6">
                 <div>
                   <dt className="font-mono text-xs uppercase tracking-wide text-brass-deep">
                     Email
@@ -150,7 +155,7 @@ export function Contact() {
                   </dt>
                   <dd className="mt-1 text-muted-foreground">{contactDetails.address}</dd>
                 </div>
-              </dl>
+              </StaggerReveal>
 
               <p className="mt-8 text-sm text-muted-foreground">
                 Not sure where to start? See how our{' '}
@@ -185,7 +190,7 @@ export function Contact() {
                         autoComplete="name"
                         value={values.name}
                         onChange={(e) => update('name', e.target.value)}
-                        className="rounded border border-border bg-background px-3 py-2 text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass-deep"
+                        className="field-motion rounded border border-border bg-background px-3 py-2 text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass-deep"
                       />
                     )}
                   </FormField>
@@ -199,7 +204,7 @@ export function Contact() {
                         autoComplete="email"
                         value={values.email}
                         onChange={(e) => update('email', e.target.value)}
-                        className="rounded border border-border bg-background px-3 py-2 text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass-deep"
+                        className="field-motion rounded border border-border bg-background px-3 py-2 text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass-deep"
                       />
                     )}
                   </FormField>
@@ -211,7 +216,7 @@ export function Contact() {
                         name="service"
                         value={values.service}
                         onChange={(e) => update('service', e.target.value)}
-                        className="rounded border border-border bg-background px-3 py-2 text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass-deep"
+                        className="field-motion rounded border border-border bg-background px-3 py-2 text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass-deep"
                       >
                         <option value="">No specific service</option>
                         {services.map((service) => (
@@ -231,7 +236,7 @@ export function Contact() {
                         rows={5}
                         value={values.message}
                         onChange={(e) => update('message', e.target.value)}
-                        className="rounded border border-border bg-background px-3 py-2 text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass-deep"
+                        className="field-motion rounded border border-border bg-background px-3 py-2 text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass-deep"
                       />
                     )}
                   </FormField>
@@ -251,56 +256,62 @@ export function Contact() {
       {/* (C) Alternative contact methods — Email, WhatsApp, Consultation. */}
       <Section aria-labelledby="contact-channels-title">
         <Container>
-          <h2 id="contact-channels-title" className="font-display text-3xl text-ink sm:text-4xl">
+          <Reveal as="h2" id="contact-channels-title" className="font-display text-3xl text-ink sm:text-4xl">
             Other ways to reach us
-          </h2>
-          <div className="mt-8 grid gap-6 md:grid-cols-3">
-            <Card as="div">
-              <h3 className="font-mono text-xs uppercase tracking-wide text-brass-deep">Email</h3>
-              <p className="mt-3 text-muted-foreground">
-                Send us the details and we will respond with next steps.
-              </p>
-              <a
-                className="mt-4 inline-block break-words text-ink underline hover:text-brass-deep"
-                href={`mailto:${contactDetails.email}`}
-              >
-                {contactDetails.email}
-              </a>
-            </Card>
+          </Reveal>
+          <StaggerReveal className="mt-8 grid gap-6 md:grid-cols-3" step={STAGGER.cards}>
+            <div>
+              <Card as="div" className="card-lift group h-full">
+                <h3 className="font-mono text-xs uppercase tracking-wide text-brass-deep">Email</h3>
+                <p className="mt-3 text-muted-foreground">
+                  Send us the details and we will respond with next steps.
+                </p>
+                <a
+                  className="mt-4 inline-block break-words text-ink underline hover:text-brass-deep"
+                  href={`mailto:${contactDetails.email}`}
+                >
+                  {contactDetails.email}
+                </a>
+              </Card>
+            </div>
 
-            <Card as="div">
-              <h3 className="font-mono text-xs uppercase tracking-wide text-brass-deep">WhatsApp</h3>
-              <p className="mt-3 text-muted-foreground">
-                Message us on {business.phoneDisplay} for a quick conversation.
-              </p>
-              <div className="mt-4">
-                <WhatsAppCTA kind="question" variant="secondary" />
-              </div>
-            </Card>
+            <div>
+              <Card as="div" className="card-lift group h-full">
+                <h3 className="font-mono text-xs uppercase tracking-wide text-brass-deep">WhatsApp</h3>
+                <p className="mt-3 text-muted-foreground">
+                  Message us on {business.phoneDisplay} for a quick conversation.
+                </p>
+                <div className="mt-4">
+                  <WhatsAppCTA kind="question" variant="secondary" />
+                </div>
+              </Card>
+            </div>
 
-            <Card as="div">
-              <h3 className="font-mono text-xs uppercase tracking-wide text-brass-deep">
-                Consultation
-              </h3>
-              <p className="mt-3 text-muted-foreground">
-                Book a free consultation to discuss your requirements.
-              </p>
-              <div className="mt-4">
-                <WhatsAppCTA kind="consultation" variant="primary" />
-              </div>
-            </Card>
-          </div>
+            <div>
+              <Card as="div" className="card-lift group h-full">
+                <h3 className="font-mono text-xs uppercase tracking-wide text-brass-deep">
+                  Consultation
+                </h3>
+                <p className="mt-3 text-muted-foreground">
+                  Book a free consultation to discuss your requirements.
+                </p>
+                <div className="mt-4">
+                  <WhatsAppCTA kind="consultation" variant="primary" />
+                </div>
+              </Card>
+            </div>
+          </StaggerReveal>
         </Container>
       </Section>
 
       {/* (D) FAQ — accessible accordion with the ONE verified Q&A + closing line. */}
       <Section className="bg-surface-stone" aria-labelledby="contact-faq-title">
         <Container className="max-w-3xl">
-          <h2 id="contact-faq-title" className="font-display text-3xl text-ink sm:text-4xl">
+          <Reveal as="h2" id="contact-faq-title" className="font-display text-3xl text-ink sm:text-4xl">
             Frequently asked
-          </h2>
+          </Reveal>
 
-          <div className="mt-8 rounded-lg border border-border bg-background">
+          <Reveal className="mt-8 rounded-lg border border-border bg-background">
             <h3 className="m-0">
               <button
                 type="button"
@@ -325,7 +336,7 @@ export function Contact() {
             >
               <p className="leading-relaxed">{contact.faq.answer}</p>
             </div>
-          </div>
+          </Reveal>
 
           <p className="mt-6 text-muted-foreground">{contact.faq.closing}</p>
         </Container>
@@ -335,12 +346,14 @@ export function Contact() {
           hours (both [NOT VERIFIED]; logged as a gap in FEAT-005). */}
       <Section aria-labelledby="contact-location-title">
         <Container className="max-w-3xl">
-          <h2 id="contact-location-title" className="font-display text-3xl text-ink sm:text-4xl">
-            Our office
-          </h2>
-          <address className="mt-6 not-italic text-lg text-muted-foreground">
-            {contactDetails.address}
-          </address>
+          <Reveal>
+            <h2 id="contact-location-title" className="font-display text-3xl text-ink sm:text-4xl">
+              Our office
+            </h2>
+            <address className="mt-6 not-italic text-lg text-muted-foreground">
+              {contactDetails.address}
+            </address>
+          </Reveal>
         </Container>
       </Section>
     </>

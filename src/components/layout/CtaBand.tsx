@@ -1,6 +1,7 @@
 import { Container } from '@/components/primitives/Container';
 import { Section } from '@/components/primitives/Section';
 import { Button } from '@/components/primitives/Button';
+import { Reveal } from '@/components/motion/Reveal';
 
 interface CtaBandProps {
   /** The band heading, rendered as an H2 on light-on-navy. */
@@ -23,14 +24,14 @@ export function CtaBand({ heading, button, id }: CtaBandProps) {
   return (
     <Section className="bg-ink" aria-labelledby={id}>
       <Container>
-        <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+        <Reveal className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
           <h2 id={id} className="font-display text-2xl text-background sm:max-w-xl">
             {heading}
           </h2>
           <Button as="a" href={button.href} variant="primary">
             {button.label}
           </Button>
-        </div>
+        </Reveal>
       </Container>
     </Section>
   );

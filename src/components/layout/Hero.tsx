@@ -102,7 +102,7 @@ export function Hero() {
               className="btn-hero-primary inline-flex items-center justify-center gap-2 rounded px-7 py-3.5 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass focus-visible:ring-offset-2 focus-visible:ring-offset-ink"
             >
               Explore Our Services
-              <span aria-hidden="true">→</span>
+              <span aria-hidden="true" className="cta-arrow">→</span>
             </a>
             {/* Secondary CTA rendered directly (not via the themed Button) so the
                 glass ghost treatment is not overridden by brass-fill utilities. */}

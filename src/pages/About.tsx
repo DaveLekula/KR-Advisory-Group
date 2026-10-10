@@ -7,6 +7,9 @@ import { Card } from '@/components/primitives/Card';
 import { AudienceCard } from '@/components/cards/AudienceCard';
 import { PageHero } from '@/components/layout/PageHero';
 import { CtaBand } from '@/components/layout/CtaBand';
+import { Reveal } from '@/components/motion/Reveal';
+import { StaggerReveal } from '@/components/motion/StaggerReveal';
+import { STAGGER } from '@/animations/motionTokens';
 import { about, home } from '@/content/pages';
 import { audiences } from '@/content/services';
 import { leadership } from '@/content/business';
@@ -40,15 +43,15 @@ export function About() {
       <Section className="bg-surface-ivory" aria-labelledby="about-who-we-are-title">
         <Container>
           <div className="grid gap-10 md:grid-cols-2 md:gap-16">
-            <div>
+            <Reveal>
               <h2
                 id="about-who-we-are-title"
                 className="font-display text-3xl text-ink sm:text-4xl"
               >
                 Who We Are
               </h2>
-            </div>
-            <div>
+            </Reveal>
+            <Reveal>
               <p className="text-lg leading-relaxed text-muted-foreground">{about.body}</p>
               <p className="mt-6 font-display text-2xl leading-snug text-ink">
                 {about.belief}
@@ -68,7 +71,7 @@ export function About() {
                 </a>
                 .
               </p>
-            </div>
+            </Reveal>
           </div>
         </Container>
       </Section>
@@ -81,13 +84,14 @@ export function About() {
           naturally to fit the full bio — no fixed height, no truncation. */}
       <Section aria-labelledby="about-leadership-title">
         <Container>
-          <h2 id="about-leadership-title" className="font-display text-3xl text-ink sm:text-4xl">
+          <Reveal as="h2" id="about-leadership-title" className="font-display text-3xl text-ink sm:text-4xl">
             Our Leadership
-          </h2>
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
+          </Reveal>
+          <StaggerReveal className="mt-10 grid gap-6 md:grid-cols-2" step={STAGGER.cards}>
             {leadership.map((person) => (
-              <Card as="article" key={person.name} className="flex gap-5">
-                <span
+              <div key={person.name}>
+                <Card as="article" className="card-lift group flex h-full gap-5">
+                  <span
                   aria-hidden="true"
                   className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-brass bg-surface-ivory font-display text-lg text-brass-deep"
                 >
@@ -114,9 +118,10 @@ export function About() {
                     ))}
                   </ul>
                 </div>
-              </Card>
+                </Card>
+              </div>
             ))}
-          </div>
+          </StaggerReveal>
         </Container>
       </Section>
 
@@ -126,34 +131,38 @@ export function About() {
           display title, muted body). Stacks on mobile. */}
       <Section className="bg-surface-stone" aria-labelledby="about-how-title">
         <Container>
-          <h2 id="about-how-title" className="font-display text-3xl text-ink sm:text-4xl">
+          <Reveal as="h2" id="about-how-title" className="font-display text-3xl text-ink sm:text-4xl">
             {about.howWeWork.heading}
-          </h2>
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
+          </Reveal>
+          <StaggerReveal className="mt-10 grid gap-6 md:grid-cols-3" step={STAGGER.cards}>
             {about.principles.map((principle) => (
-              <Card as="article" key={principle.number}>
-                <span className="font-mono text-sm text-brass-deep" aria-hidden="true">
-                  {principle.number}
-                </span>
-                <h3 className="mt-2 font-display text-xl text-ink">{principle.title}</h3>
-                <p className="mt-2 text-muted-foreground">{principle.body}</p>
-              </Card>
+              <div key={principle.number}>
+                <Card as="article" className="card-lift group h-full">
+                  <span className="font-mono text-sm text-brass-deep" aria-hidden="true">
+                    {principle.number}
+                  </span>
+                  <h3 className="mt-2 font-display text-xl text-ink">{principle.title}</h3>
+                  <p className="mt-2 text-muted-foreground">{principle.body}</p>
+                </Card>
+              </div>
             ))}
-          </div>
+          </StaggerReveal>
         </Container>
       </Section>
 
       {/* (E) Who We Help — same three audience cards / 3-up grid as Home. */}
       <Section aria-labelledby="about-who-title">
         <Container>
-          <h2 id="about-who-title" className="font-display text-3xl text-ink sm:text-4xl">
+          <Reveal as="h2" id="about-who-title" className="font-display text-3xl text-ink sm:text-4xl">
             {about.whoWeHelp.heading}
-          </h2>
-          <div className="mt-8 grid gap-6 md:grid-cols-3">
+          </Reveal>
+          <StaggerReveal className="mt-8 grid gap-6 md:grid-cols-3" step={STAGGER.cards}>
             {audiences.map((audience) => (
-              <AudienceCard key={audience.title} title={audience.title} body={audience.body} />
+              <div key={audience.title}>
+                <AudienceCard title={audience.title} body={audience.body} />
+              </div>
             ))}
-          </div>
+          </StaggerReveal>
         </Container>
       </Section>
 
