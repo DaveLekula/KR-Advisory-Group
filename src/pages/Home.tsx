@@ -84,10 +84,14 @@ export function Home() {
         </Container>
       </Section>
 
-      {/* Public Sector Advisory band */}
-      <Section aria-labelledby="home-public-sector-title">
+      {/* Public Sector Advisory band — full-bleed navy band: the background
+          spans the full viewport width (bg-ink on the <Section>), while only
+          the inner content is constrained and centred by <Container>. No Card
+          chrome (radius/border/shadow) so it reads as an edge-to-edge band
+          rather than a boxed card. */}
+      <Section className="bg-ink" aria-labelledby="home-public-sector-title">
         <Container>
-          <Card className="flex flex-col gap-6 bg-ink text-background sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
             <h2
               id="home-public-sector-title"
               className="font-display text-2xl text-background sm:max-w-xl"
@@ -97,7 +101,7 @@ export function Home() {
             <Button as="a" href={home.publicSector.cta.href} variant="primary">
               {home.publicSector.cta.label}
             </Button>
-          </Card>
+          </div>
         </Container>
       </Section>
 
