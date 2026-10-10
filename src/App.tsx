@@ -22,7 +22,7 @@ import { setupReveal } from '@/hooks/useReveal';
  * `prefers-reduced-motion` `change` listener (per DECISION 1) drops motion live
  * on change->reduce and does nothing retroactively on change->no-preference.
  * App never adds `.hero-motion-ready` — that class is owned by HeroReveal's own
- * useGSAP pass.
+ * layout-effect pass.
  */
 export function App() {
   const { pathname } = useLocation();
