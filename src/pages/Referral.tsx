@@ -3,9 +3,10 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { breadcrumbs } from '@/lib/jsonld';
 import { Container } from '@/components/primitives/Container';
 import { Section } from '@/components/primitives/Section';
-import { Card } from '@/components/primitives/Card';
 import { Button } from '@/components/primitives/Button';
-import { referral } from '@/content/pages';
+import { PageHero } from '@/components/layout/PageHero';
+import { CtaBand } from '@/components/layout/CtaBand';
+import { referral, home } from '@/content/pages';
 import { meta } from '@/routes';
 
 export function Referral() {
@@ -14,53 +15,62 @@ export function Referral() {
       <Head {...meta['/referral']} />
       <JsonLd data={breadcrumbs('Referral Programme', '/referral')} />
 
-      {/* Intro */}
-      <Section aria-labelledby="referral-title">
-        <Container className="max-w-3xl">
-          <p className="font-mono text-xs uppercase tracking-wide text-brass-deep">
-            {referral.headingSub}
-          </p>
-          <h1 id="referral-title" className="mt-4 font-display text-4xl text-ink sm:text-5xl">
-            {referral.heading}
-          </h1>
-          <p className="mt-6 text-lg text-muted-foreground">{referral.body}</p>
-        </Container>
-      </Section>
+      {/* (A) Interior hero — the single H1 for this page, with primary CTA. */}
+      <PageHero
+        eyebrow={referral.headingSub}
+        title={referral.heading}
+        supporting={referral.intro}
+        image={home.heroImage}
+        cta={{ label: referral.cta.buttonLabel, href: '/contact' }}
+      />
 
-      {/* Reward structure — [NOT VERIFIED], placeholder only (no invented terms). */}
-      <Section className="bg-muted" aria-labelledby="referral-rewards-title">
+      {/* (B) Programme Overview — verified intro copy. */}
+      <Section className="bg-surface-ivory" aria-labelledby="referral-overview-title">
         <Container className="max-w-3xl">
-          <h2 id="referral-rewards-title" className="font-display text-3xl text-ink">
-            {referral.rewards.heading}
+          <h2
+            id="referral-overview-title"
+            className="font-display text-3xl text-ink sm:text-4xl"
+          >
+            Programme Overview
           </h2>
-          {/*
-            [NOT VERIFIED] Specific reward amounts, eligibility and terms are
-            not stated in captured content and must be confirmed with the
-            client. Do NOT invent amounts or terms.
-          */}
-          <p className="mt-6 rounded-lg border border-border bg-background p-4 text-muted-foreground">
-            [CLIENT TO SUPPLY] Reward amounts, eligibility and programme terms
-            to be confirmed by the client.
+          <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
+            {referral.intro}
           </p>
         </Container>
       </Section>
 
-      {/* CTA block */}
+      {/*
+        (C) How Referrals Work — the specific steps are [NOT VERIFIED] and are
+        OMITTED here rather than fabricated.
+        (D) Reward Structure — OMITTED from the public page. Reward amounts,
+        eligibility and terms are [NOT VERIFIED]; the gap is documented in
+        CONTENT_GAP_ANALYSIS.md. The [CLIENT TO SUPPLY] placeholder must NOT
+        render as customer-facing copy, so no reward section appears below.
+      */}
+
+      {/* (E) Referral submission CTA — verified referral.cta block. */}
       <Section aria-labelledby="referral-cta-title">
         <Container>
-          <Card className="flex flex-col gap-6 bg-ink text-background sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex flex-col gap-6 rounded-lg border border-border bg-surface-stone p-8 sm:flex-row sm:items-center sm:justify-between">
             <div className="sm:max-w-xl">
-              <h2 id="referral-cta-title" className="font-display text-2xl text-background">
+              <h2 id="referral-cta-title" className="font-display text-2xl text-ink">
                 {referral.cta.heading}
               </h2>
-              <p className="mt-3 text-background/80">{referral.cta.body}</p>
+              <p className="mt-3 text-muted-foreground">{referral.cta.body}</p>
             </div>
             <Button as="a" href="/contact" variant="primary">
               {referral.cta.buttonLabel}
             </Button>
-          </Card>
+          </div>
         </Container>
       </Section>
+
+      {/* (F) Final CTA band. */}
+      <CtaBand
+        id="referral-band-title"
+        heading="Know a business that could benefit from better financial guidance?"
+        button={{ label: 'Refer a Business', href: '/contact' }}
+      />
     </>
   );
 }
