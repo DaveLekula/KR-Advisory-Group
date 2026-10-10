@@ -36,6 +36,17 @@ export function Referral() {
           <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
             {referral.intro}
           </p>
+          <p className="mt-6 text-base text-muted-foreground">
+            Know a business that needs{' '}
+            <a className="text-ink underline hover:text-brass-deep" href="/services#internal-audit">
+              internal audit
+            </a>{' '}
+            or{' '}
+            <a className="text-ink underline hover:text-brass-deep" href="/services#audit-readiness">
+              audit-readiness
+            </a>{' '}
+            support? Refer them and we will take it from there.
+          </p>
         </Container>
       </Section>
 

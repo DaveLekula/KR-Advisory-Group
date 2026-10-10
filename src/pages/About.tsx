@@ -53,6 +53,21 @@ export function About() {
               <p className="mt-6 font-display text-2xl leading-snug text-ink">
                 {about.belief}
               </p>
+              <p className="mt-6 text-base text-muted-foreground">
+                From{' '}
+                <a className="text-ink underline hover:text-brass-deep" href="/services#accounting">
+                  accounting
+                </a>{' '}
+                to{' '}
+                <a className="text-ink underline hover:text-brass-deep" href="/services#audit-readiness">
+                  audit readiness
+                </a>
+                , explore the full range of our{' '}
+                <a className="text-ink underline hover:text-brass-deep" href="/services">
+                  services
+                </a>
+                .
+              </p>
             </div>
           </div>
         </Container>
