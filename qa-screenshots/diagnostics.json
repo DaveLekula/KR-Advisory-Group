@@ -16,7 +16,9 @@
     "mobileTogglePresent": true,
     "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
     "h1Font": "Fraunces, ui-serif, Georgia, serif",
-    "waCtas": 6
+    "waCtas": 6,
+    "footerCount": 1,
+    "leakedPlaceholder": false
   },
   {
     "route": "services",
@@ -35,7 +37,9 @@
     "mobileTogglePresent": true,
     "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
     "h1Font": "Fraunces, ui-serif, Georgia, serif",
-    "waCtas": 17
+    "waCtas": 17,
+    "footerCount": 1,
+    "leakedPlaceholder": false
   },
   {
     "route": "about",
@@ -54,7 +58,9 @@
     "mobileTogglePresent": true,
     "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
     "h1Font": "Fraunces, ui-serif, Georgia, serif",
-    "waCtas": 3
+    "waCtas": 3,
+    "footerCount": 1,
+    "leakedPlaceholder": true
   },
   {
     "route": "contact",
@@ -73,7 +79,9 @@
     "mobileTogglePresent": true,
     "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
     "h1Font": "Fraunces, ui-serif, Georgia, serif",
-    "waCtas": 6
+    "waCtas": 6,
+    "footerCount": 1,
+    "leakedPlaceholder": false
   },
   {
     "route": "referral",
@@ -92,7 +100,9 @@
     "mobileTogglePresent": true,
     "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
     "h1Font": "Fraunces, ui-serif, Georgia, serif",
-    "waCtas": 3
+    "waCtas": 3,
+    "footerCount": 1,
+    "leakedPlaceholder": false
   },
   {
     "route": "home",
@@ -111,7 +121,9 @@
     "mobileTogglePresent": true,
     "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
     "h1Font": "Fraunces, ui-serif, Georgia, serif",
-    "waCtas": 6
+    "waCtas": 6,
+    "footerCount": 1,
+    "leakedPlaceholder": false
   },
   {
     "route": "services",
@@ -130,7 +142,9 @@
     "mobileTogglePresent": true,
     "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
     "h1Font": "Fraunces, ui-serif, Georgia, serif",
-    "waCtas": 17
+    "waCtas": 17,
+    "footerCount": 1,
+    "leakedPlaceholder": false
   },
   {
     "route": "about",
@@ -149,7 +163,9 @@
     "mobileTogglePresent": true,
     "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
     "h1Font": "Fraunces, ui-serif, Georgia, serif",
-    "waCtas": 3
+    "waCtas": 3,
+    "footerCount": 1,
+    "leakedPlaceholder": true
   },
   {
     "route": "contact",
@@ -168,7 +184,9 @@
     "mobileTogglePresent": true,
     "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
     "h1Font": "Fraunces, ui-serif, Georgia, serif",
-    "waCtas": 6
+    "waCtas": 6,
+    "footerCount": 1,
+    "leakedPlaceholder": false
   },
   {
     "route": "referral",
@@ -187,7 +205,9 @@
     "mobileTogglePresent": true,
     "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
     "h1Font": "Fraunces, ui-serif, Georgia, serif",
-    "waCtas": 3
+    "waCtas": 3,
+    "footerCount": 1,
+    "leakedPlaceholder": false
   },
   {
     "route": "home",
@@ -206,7 +226,9 @@
     "mobileTogglePresent": true,
     "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
     "h1Font": "Fraunces, ui-serif, Georgia, serif",
-    "waCtas": 6
+    "waCtas": 6,
+    "footerCount": 1,
+    "leakedPlaceholder": false
   },
   {
     "route": "services",
@@ -225,7 +247,9 @@
     "mobileTogglePresent": true,
     "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
     "h1Font": "Fraunces, ui-serif, Georgia, serif",
-    "waCtas": 17
+    "waCtas": 17,
+    "footerCount": 1,
+    "leakedPlaceholder": false
   },
   {
     "route": "about",
@@ -244,7 +268,9 @@
     "mobileTogglePresent": true,
     "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
     "h1Font": "Fraunces, ui-serif, Georgia, serif",
-    "waCtas": 3
+    "waCtas": 3,
+    "footerCount": 1,
+    "leakedPlaceholder": true
   },
   {
     "route": "contact",
@@ -263,7 +289,9 @@
     "mobileTogglePresent": true,
     "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
     "h1Font": "Fraunces, ui-serif, Georgia, serif",
-    "waCtas": 6
+    "waCtas": 6,
+    "footerCount": 1,
+    "leakedPlaceholder": false
   },
   {
     "route": "referral",
@@ -282,7 +310,9 @@
     "mobileTogglePresent": true,
     "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
     "h1Font": "Fraunces, ui-serif, Georgia, serif",
-    "waCtas": 3
+    "waCtas": 3,
+    "footerCount": 1,
+    "leakedPlaceholder": false
   },
   {
     "route": "home",
@@ -301,7 +331,9 @@
     "mobileTogglePresent": true,
     "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
     "h1Font": "Fraunces, ui-serif, Georgia, serif",
-    "waCtas": 6
+    "waCtas": 6,
+    "footerCount": 1,
+    "leakedPlaceholder": false
   },
   {
     "route": "services",
@@ -320,7 +352,9 @@
     "mobileTogglePresent": true,
     "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
     "h1Font": "Fraunces, ui-serif, Georgia, serif",
-    "waCtas": 17
+    "waCtas": 17,
+    "footerCount": 1,
+    "leakedPlaceholder": false
   },
   {
     "route": "about",
@@ -339,7 +373,9 @@
     "mobileTogglePresent": true,
     "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
     "h1Font": "Fraunces, ui-serif, Georgia, serif",
-    "waCtas": 3
+    "waCtas": 3,
+    "footerCount": 1,
+    "leakedPlaceholder": true
   },
   {
     "route": "contact",
@@ -358,7 +394,9 @@
     "mobileTogglePresent": true,
     "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
     "h1Font": "Fraunces, ui-serif, Georgia, serif",
-    "waCtas": 6
+    "waCtas": 6,
+    "footerCount": 1,
+    "leakedPlaceholder": false
   },
   {
     "route": "referral",
@@ -377,7 +415,9 @@
     "mobileTogglePresent": true,
     "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
     "h1Font": "Fraunces, ui-serif, Georgia, serif",
-    "waCtas": 3
+    "waCtas": 3,
+    "footerCount": 1,
+    "leakedPlaceholder": false
   },
   {
     "route": "home",
@@ -396,7 +436,9 @@
     "mobileTogglePresent": true,
     "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
     "h1Font": "Fraunces, ui-serif, Georgia, serif",
-    "waCtas": 6
+    "waCtas": 6,
+    "footerCount": 1,
+    "leakedPlaceholder": false
   },
   {
     "route": "services",
@@ -415,7 +457,9 @@
     "mobileTogglePresent": true,
     "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
     "h1Font": "Fraunces, ui-serif, Georgia, serif",
-    "waCtas": 17
+    "waCtas": 17,
+    "footerCount": 1,
+    "leakedPlaceholder": false
   },
   {
     "route": "about",
@@ -434,7 +478,9 @@
     "mobileTogglePresent": true,
     "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
     "h1Font": "Fraunces, ui-serif, Georgia, serif",
-    "waCtas": 3
+    "waCtas": 3,
+    "footerCount": 1,
+    "leakedPlaceholder": true
   },
   {
     "route": "contact",
@@ -453,7 +499,9 @@
     "mobileTogglePresent": true,
     "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
     "h1Font": "Fraunces, ui-serif, Georgia, serif",
-    "waCtas": 6
+    "waCtas": 6,
+    "footerCount": 1,
+    "leakedPlaceholder": false
   },
   {
     "route": "referral",
@@ -472,7 +520,9 @@
     "mobileTogglePresent": true,
     "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
     "h1Font": "Fraunces, ui-serif, Georgia, serif",
-    "waCtas": 3
+    "waCtas": 3,
+    "footerCount": 1,
+    "leakedPlaceholder": false
   },
   {
     "route": "home",
@@ -491,7 +541,9 @@
     "mobileTogglePresent": true,
     "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
     "h1Font": "Fraunces, ui-serif, Georgia, serif",
-    "waCtas": 6
+    "waCtas": 6,
+    "footerCount": 1,
+    "leakedPlaceholder": false
   },
   {
     "route": "services",
@@ -510,7 +562,9 @@
     "mobileTogglePresent": true,
     "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
     "h1Font": "Fraunces, ui-serif, Georgia, serif",
-    "waCtas": 17
+    "waCtas": 17,
+    "footerCount": 1,
+    "leakedPlaceholder": false
   },
   {
     "route": "about",
@@ -529,7 +583,9 @@
     "mobileTogglePresent": true,
     "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
     "h1Font": "Fraunces, ui-serif, Georgia, serif",
-    "waCtas": 3
+    "waCtas": 3,
+    "footerCount": 1,
+    "leakedPlaceholder": true
   },
   {
     "route": "contact",
@@ -548,7 +604,9 @@
     "mobileTogglePresent": true,
     "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
     "h1Font": "Fraunces, ui-serif, Georgia, serif",
-    "waCtas": 6
+    "waCtas": 6,
+    "footerCount": 1,
+    "leakedPlaceholder": false
   },
   {
     "route": "referral",
@@ -567,15 +625,8 @@
     "mobileTogglePresent": true,
     "bodyFont": "\"Instrument Sans\", ui-sans-serif, system-ui, sans-serif",
     "h1Font": "Fraunces, ui-serif, Georgia, serif",
-    "waCtas": 3
-  },
-  {
-    "route": "home",
-    "viewport": "360x800",
-    "mobileNav": {
-      "toggleFound": true,
-      "opened": true,
-      "linksVisible": 36
-    }
+    "waCtas": 3,
+    "footerCount": 1,
+    "leakedPlaceholder": false
   }
 ]
